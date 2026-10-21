@@ -2,83 +2,86 @@
 
 # Geonode Integrations
 
-Bring fresh web data into what you're building. Extract readable page content, discover URLs, and connect the results to your applications, AI agents and everyday workflows.
+Web data for your applications, AI agents and workflows. Extract readable page content, discover URLs, and connect the results to the tools you already use.
 
-**[Create your Geonode account →](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Explore the docs](https://docs.geonode.com/docs/scraper-api) &nbsp; · &nbsp; [Visit Geonode](https://geonode.com)
+**[Create an account →](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Documentation](https://docs.geonode.com/docs/scraper-api) &nbsp; · &nbsp; [Geonode](https://geonode.com)
 
-## Start with the way you work
+[Start here](#start-here) · [SDKs](#sdks) · [Agent frameworks](#agent-frameworks) · [Automation](#automation) · [What's next](#whats-next) · [Catalog](#machine-readable-catalog)
 
-| What would you like to build? | Start here |
-| --- | --- |
-| **An application that uses web data** | [REST API reference](https://docs.geonode.com/docs/scraper-api/v1/reference) — call Geonode from any language. |
-| **An AI assistant that can work with the web** | [Connect with MCP](https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview) — use Geonode tools from a compatible assistant. |
-| **A script or terminal workflow** | [Install the CLI](https://pypi.org/project/geonode-scraper-cli/) — extract, search, crawl and map from your terminal. |
+## Start here
 
-**New to Geonode?** [Create an account](https://app.geonode.com/sign-up), get your API key from the dashboard, and follow the guide for your stack below. MCP also offers limited anonymous page extraction if you want to try connecting first. [See authentication and limits](https://docs.geonode.com/docs/scraper-api/guides/mcp/01_before-you-start).
+| Connection | Choose it when | Documentation |
+| --- | --- | --- |
+| **API** | You're building an application in any language. | [REST API reference](https://docs.geonode.com/docs/scraper-api/v1/reference) |
+| **MCP** | Your AI assistant needs to read and work with web data. | [MCP setup guide](https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview) |
+| **CLI** | You're working in a terminal or automating a shell script. | [CLI on PyPI](https://pypi.org/project/geonode-scraper-cli/) |
 
-## Your tools, connected
+**New to Geonode?** [Create an account](https://app.geonode.com/sign-up), get your API key from the dashboard, and follow the guide for your stack. MCP also offers limited anonymous page extraction. [Authentication and limits →](https://docs.geonode.com/docs/scraper-api/guides/mcp/01_before-you-start)
 
-Use an SDK in your application, add web tools to an agent, or bring extracted content into an automation. These integrations use the Geonode Scraper API, so you can choose the interface that fits your project.
+## SDKs
 
-### SDKs
+Use typed clients in your application.
 
-| Integration | What it does | Status | Documentation | Package |
-| --- | --- | --- | --- | --- |
-| **Python SDK** | Web data, with the Python you already know. | Available | [Geonode Python SDK docs](https://docs.geonode.com/docs/scraper-api/developer-guides/python-sdk) | [View on PyPI](https://pypi.org/project/geonode-scraper-sdk/) |
-| **TypeScript SDK** | Typed web extraction for your application. | Available | [View TypeScript SDK on npm](https://www.npmjs.com/package/@geonode_scraper/scraper-sdk) | [View on npm](https://www.npmjs.com/package/@geonode_scraper/scraper-sdk) |
+| Integration | Use it for | Start building |
+| --- | --- | --- |
+| **Python SDK** | Web data, with the Python you already know. | [Geonode guide](https://docs.geonode.com/docs/scraper-api/developer-guides/python-sdk) · [PyPI](https://pypi.org/project/geonode-scraper-sdk/) |
+| **TypeScript SDK** | Typed web extraction for your application. | [npm & setup](https://www.npmjs.com/package/@geonode_scraper/scraper-sdk) |
 
-### Frameworks
+## Agent frameworks
 
-| Integration | What it does | Status | Documentation | Package |
-| --- | --- | --- | --- | --- |
-| **Agent tools core** | Shared Python tools for custom agent integrations. | Available | [View Agent tools core on PyPI](https://pypi.org/project/geonode-scraper-tools-core/) | [View on PyPI](https://pypi.org/project/geonode-scraper-tools-core/) |
-| **CrewAI** | Put fresh web data in your crew’s hands. | Available | [Geonode CrewAI docs](https://docs.geonode.com/docs/scraper-api/developer-guides/crewai) | [View on PyPI](https://pypi.org/project/geonode-scraper-crewai/) |
-| **LangChain** | Give your LangChain agents web data tools. | Available | [Geonode LangChain docs](https://docs.geonode.com/docs/scraper-api/developer-guides/langchain) | [View on PyPI](https://pypi.org/project/geonode-scraper-langchain/) |
+Give an agent tools to extract pages, map sites, search the web and work with longer jobs.
 
-### Automation
-
-| Integration | What it does | Status | Documentation | Package |
-| --- | --- | --- | --- | --- |
-| **Make** | Connect extraction to a Make scenario. | Private app | [Geonode API docs](https://docs.geonode.com/docs/scraper-api) | — |
-| **n8n** | Bring web data into your n8n workflows. | Available · self-hosted community node | [View n8n on npm](https://www.npmjs.com/package/n8n-nodes-scraperapi) | [View on npm](https://www.npmjs.com/package/n8n-nodes-scraperapi) |
-| **Zapier** | Bring Geonode into your Zaps. | Private app | [Geonode API docs](https://docs.geonode.com/docs/scraper-api) | — |
+| Integration | Use it for | Start building |
+| --- | --- | --- |
+| **LangChain** | Give your LangChain agents web data tools. | [Geonode guide](https://docs.geonode.com/docs/scraper-api/developer-guides/langchain) · [PyPI](https://pypi.org/project/geonode-scraper-langchain/) |
+| **CrewAI** | Put fresh web data in your crew’s hands. | [Geonode guide](https://docs.geonode.com/docs/scraper-api/developer-guides/crewai) · [PyPI](https://pypi.org/project/geonode-scraper-crewai/) |
 
 <details>
-<summary><strong>Which Python package should I choose?</strong></summary>
+<summary><strong>Building your own Python adapter?</strong></summary>
 
-### Choose a Python package
+**Agent tools core** provides shared schemas, request handling, polling and an operation registry above the Python SDK. LangChain, CrewAI and the CLI install it as a dependency.
 
-- **Python SDK**: call the API from your Python application.
-- **LangChain or CrewAI**: add Geonode tools to the framework you already use. The shared runtime installs as a dependency.
-- **Agent tools core**: build a custom framework adapter using shared schemas and request handling. It is a Python library, not an MCP server.
+Install it directly when building a custom adapter. It is a Python library, not an MCP server.
+
+[View agent tools core on PyPI](https://pypi.org/project/geonode-scraper-tools-core/)
 
 </details>
 
-## A few things to know
+## Automation
 
-- **n8n** is available as a community node for self-hosted installations; n8n Cloud support is not available through this listing.
-- **Make and Zapier** are private apps. [Talk to us about your workflow](https://geonode.com/contact) to discuss access.
-- Authenticated requests use your Geonode plan and limits. [Check API pricing](https://docs.geonode.com/docs/scraper-api/additional-resources/pricing). AI assistants and automation platforms may have separate subscriptions.
+Bring extracted content into a workflow and send it to the next step.
 
-## Help shape what comes next
+| Integration | Use it for | Start building |
+| --- | --- | --- |
+| **n8n**<br><sub>Self-hosted community node</sub> | Bring web data into your n8n workflows. | [npm & setup](https://www.npmjs.com/package/n8n-nodes-scraperapi) |
+| **Make**<br><sub>Private app</sub> | Connect extraction to a Make scenario. | [Geonode guide](https://docs.geonode.com/docs/scraper-api) |
+| **Zapier**<br><sub>Private app</sub> | Bring Geonode into your Zaps. | [Geonode guide](https://docs.geonode.com/docs/scraper-api) |
 
-Which connection would make your work easier? We're exploring more SDKs, agent frameworks and automation tools. [Tell us what you want to build](https://geonode.com/contact).
+**n8n:** the community node supports self-hosted installations. This listing does not provide n8n Cloud access. **Make and Zapier:** private apps; [contact Geonode](https://geonode.com/contact) to confirm access and supported actions.
+
+## What's next
+
+We're exploring more SDKs, frameworks and workflow tools. [Tell us which connection would help you](https://geonode.com/contact).
 
 <details>
-<summary>See the integrations under consideration</summary>
+<summary>Explore the integrations under consideration</summary>
 
 Go SDK · Java SDK · Rust SDK · Ruby SDK · PHP SDK · .NET SDK · LlamaIndex · OpenAI Agents SDK · Vercel AI SDK · Mastra · Dify · Coze · Pipedream · Google Sheets · Airbyte · Snowflake · BigQuery · Amazon S3 · Postman
 
-These are proposals, not released integrations or committed launch dates. [Tell us which workflow you need](https://geonode.com/contact). The machine-readable catalog below covers the current inventory; proposed connectors do not have install commands or package listings yet.
+These are proposals, not released integrations or committed launch dates. The catalog below covers the current inventory; proposed connectors do not have install commands or package listings yet.
 
 </details>
 
-## For developers and agents
+## Machine-readable catalog
 
-[Download catalog.json](./catalog.json) for the 12 current integration records: package versions, installation commands, documentation links, compatibility and verification status. Each record includes its review date. `published`, `private`, `planned` and `audit-required` describe integration availability, not this repository's visibility.
+[**Open catalog.json →**](./catalog.json)
 
-Source links are added as repositories become publicly accessible. The catalog includes review dates and verification details so you can distinguish published packages, private apps and work in progress.
+The 12 current records include package versions, installation commands, documentation links, compatibility and review dates. Availability is recorded separately from verification: a published package does not establish a successful end-to-end connection test.
 
-## Let's build something useful
+Source links are added when repositories become publicly accessible. The agent setup guide is currently in review; use the [current MCP documentation](https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview) for assistant setup.
 
-**[Create your account](https://app.geonode.com/sign-up)** and start with your preferred integration. Have a question or a workflow in mind? [Talk to the Geonode team](https://geonode.com/contact).
+## Account, usage and support
+
+Authenticated requests use your Geonode plan and limits. [Read the API pricing guide](https://docs.geonode.com/docs/scraper-api/additional-resources/pricing). Assistants and automation platforms may have separate subscriptions.
+
+**[Create your account](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Get help](https://geonode.com/contact) &nbsp; · &nbsp; [Browse all integrations](https://geonode.com/integrations)
