@@ -1,6 +1,6 @@
-![Geonode — Your stack. Connected.](./assets/banner.svg)
+![Geonode — Web scraping API, MCP, SDKs and automation connectors](./assets/banner.svg)
 
-# Geonode Integrations
+# Geonode Integrations — Web Scraping API, MCP & Automation
 
 Web data for your applications, AI agents and workflows. Extract readable page content, discover URLs, and connect the results to the tools you already use.
 
@@ -26,8 +26,8 @@ Use typed clients in your application.
 
 | Integration | Use it for | Start building |
 | --- | --- | --- |
-| **Python SDK** | Typed requests and responses in Python. | [Geonode guide](https://docs.geonode.com/docs/scraper-api/developer-guides/python-sdk) · [PyPI](https://pypi.org/project/geonode-scraper-sdk/) |
-| **TypeScript SDK** | Typed API calls from server-side JavaScript or TypeScript. | [npm & setup](https://www.npmjs.com/package/@geonode_scraper/scraper-sdk) |
+| <img src="assets/python.svg" width="24" height="24" alt="Python SDK logo" /> **Python SDK** | Typed requests and responses in Python. | [Geonode guide](https://docs.geonode.com/docs/scraper-api/developer-guides/python-sdk) · [PyPI](https://pypi.org/project/geonode-scraper-sdk/) |
+| <img src="assets/typescript.svg" width="24" height="24" alt="TypeScript SDK logo" /> **TypeScript SDK** | Typed API calls from server-side JavaScript or TypeScript. | [npm & setup](https://www.npmjs.com/package/@geonode_scraper/scraper-sdk) |
 
 ## Agent frameworks
 
@@ -35,8 +35,8 @@ Give an agent tools to extract pages, map sites, search the web and work with lo
 
 | Integration | Use it for | Start building |
 | --- | --- | --- |
-| **LangChain** | Native tools for LangChain agents and workflows. | [Geonode guide](https://docs.geonode.com/docs/scraper-api/developer-guides/langchain) · [PyPI](https://pypi.org/project/geonode-scraper-langchain/) |
-| **CrewAI** | Native tools for CrewAI agents and tasks. | [Geonode guide](https://docs.geonode.com/docs/scraper-api/developer-guides/crewai) · [PyPI](https://pypi.org/project/geonode-scraper-crewai/) |
+| <img src="assets/langchain.svg" width="24" height="24" alt="LangChain logo" /> **LangChain** | Native tools for LangChain agents and workflows. | [Geonode guide](https://docs.geonode.com/docs/scraper-api/developer-guides/langchain) · [PyPI](https://pypi.org/project/geonode-scraper-langchain/) |
+| <img src="assets/crewai.svg" width="24" height="24" alt="CrewAI logo" /> **CrewAI** | Native tools for CrewAI agents and tasks. | [Geonode guide](https://docs.geonode.com/docs/scraper-api/developer-guides/crewai) · [PyPI](https://pypi.org/project/geonode-scraper-crewai/) |
 
 <details>
 <summary><strong>Building your own Python adapter?</strong></summary>
@@ -55,11 +55,11 @@ Bring extracted content into a workflow and send it to the next step.
 
 | Integration | Use it for | Start building |
 | --- | --- | --- |
-| **n8n**<br><sub>Self-hosted community node</sub> | Extraction and completion triggers in n8n workflows. | [npm & setup](https://www.npmjs.com/package/n8n-nodes-scraperapi) |
-| **Make**<br><sub>Private app</sub> | Plan an extraction step in a Make scenario. | [Discuss access](https://geonode.com/contact) |
-| **Zapier**<br><sub>Private app</sub> | Plan an extraction step in a Zap. | [Discuss access](https://geonode.com/contact) |
+| <img src="assets/n8n.svg" width="24" height="24" alt="n8n logo" /> **n8n**<br><sub>Self-hosted community node</sub> | Extraction and completion triggers in n8n workflows. | [npm & setup](https://www.npmjs.com/package/n8n-nodes-scraperapi) |
+| <img src="assets/make.svg" width="24" height="24" alt="Make logo" /> **Make.com**<br><sub>Private app</sub> | Scrape pages, crawl sites and process URL lists in Make.com scenarios. | [Discuss access](https://geonode.com/contact) |
+| <img src="assets/zapier.svg" width="24" height="24" alt="Zapier logo" /> **Zapier**<br><sub>Private app</sub> | Extract pages, run batches and crawls, then continue a Zap when a job finishes. | [Discuss access](https://geonode.com/contact) |
 
-**n8n:** the community node supports self-hosted installations. This listing does not provide n8n Cloud access. **Make and Zapier:** private apps; [contact Geonode](https://geonode.com/contact) to confirm access and supported actions.
+**n8n:** a community node for self-hosted installations. **Make.com:** 15 source-defined modules cover extraction, batches, crawls, URL mapping and usage. **Zapier:** four actions, a job lookup and a completion trigger. Make and Zapier require [private app access](https://geonode.com/contact); live workflow execution has not been verified in this review.
 
 ## Proposed integrations
 
