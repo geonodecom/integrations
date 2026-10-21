@@ -81,7 +81,7 @@ These are proposals, not released integrations or committed launch dates. The ca
 
 [**Open catalog.json →**](./catalog.json)
 
-The 11 current records include package versions, installation commands, documentation links, compatibility and review dates. Availability is recorded separately from verification: a published package does not establish a successful end-to-end connection test.
+The 10 current records include package versions, installation commands, documentation links, compatibility and review dates. Availability is recorded separately from verification: a published package does not establish a successful end-to-end connection test.
 
 For programmatic use, check `lifecycle`, `installation.status` and `verification` before choosing an installation path. Check source_visibility before linking to source; private GitHub URLs require access. A null link means no destination is listed.
 
@@ -101,11 +101,10 @@ These repositories have been created and remain private while we prepare them fo
 | n8n | [geonodecom/integration-n8n](https://github.com/geonodecom/integration-n8n) |
 | Make | [geonodecom/integration-make](https://github.com/geonodecom/integration-make) |
 | Zapier | [geonodecom/integration-zapier](https://github.com/geonodecom/integration-zapier) |
-| Agent skills | [geonodecom/skills](https://github.com/geonodecom/skills) |
 
 </details>
 
-The agent setup guide is currently in review; use the [current MCP documentation](https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview) for assistant setup.
+Agent skills are documentation resources, not an integration. The [skills source](https://github.com/geonodecom/skills) remains private and the agent setup guide is currently in review; use the [current MCP documentation](https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview) for assistant setup.
 
 ## Account, usage and support
 
