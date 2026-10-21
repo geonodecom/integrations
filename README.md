@@ -71,6 +71,7 @@ We're exploring more SDKs, frameworks and workflow tools. [Tell us which connect
 - **SDKs:** Go SDK, Java SDK, Rust SDK, Ruby SDK, PHP SDK, .NET SDK.
 - **Agent frameworks:** LlamaIndex, OpenAI Agents SDK, Vercel AI SDK, Mastra.
 - **Automation and data:** Dify, Coze, Pipedream, Google Sheets, Airbyte, Snowflake, BigQuery, Amazon S3.
+- **API tooling:** Postman.
 
 These are proposals, not released integrations or committed launch dates. The catalog below covers the current inventory; proposed connectors do not have install commands or package listings yet.
 
@@ -83,6 +84,27 @@ These are proposals, not released integrations or committed launch dates. The ca
 The 12 current records include package versions, installation commands, documentation links, compatibility and review dates. Availability is recorded separately from verification: a published package does not establish a successful end-to-end connection test.
 
 For programmatic use, check `lifecycle`, `installation.status` and `verification` before choosing an installation path. A null source or package link means no public destination is listed.
+
+<details>
+<summary><strong>Planned source repositories</strong></summary>
+
+These are the intended source destinations. Repositories may be private or not yet created; use the published packages and setup guides above today. Repository names do not change the current npm or PyPI package names.
+
+| Integration | Intended GitHub repository |
+| --- | --- |
+| MCP | [geonodecom/mcp](https://github.com/geonodecom/mcp) |
+| CLI | [geonodecom/cli](https://github.com/geonodecom/cli) |
+| Python SDK | [geonodecom/python-sdk](https://github.com/geonodecom/python-sdk) |
+| TypeScript SDK | [geonodecom/typescript-sdk](https://github.com/geonodecom/typescript-sdk) |
+| LangChain | [geonodecom/langchain](https://github.com/geonodecom/langchain) |
+| CrewAI | [geonodecom/crewai](https://github.com/geonodecom/crewai) |
+| n8n | [geonodecom/n8n](https://github.com/geonodecom/n8n) |
+| Agent tools core | [geonodecom/agent-tools](https://github.com/geonodecom/agent-tools) |
+| Make | [geonodecom/make](https://github.com/geonodecom/make) |
+| Zapier | [geonodecom/zapier](https://github.com/geonodecom/zapier) |
+| Agent skills | [geonodecom/skills](https://github.com/geonodecom/skills) |
+
+</details>
 
 The agent setup guide is currently in review; use the [current MCP documentation](https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview) for assistant setup.
 
