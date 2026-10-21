@@ -37,7 +37,7 @@ Start with the [MCP setup guide](https://docs.geonode.com/docs/scraper-api/guide
 
 | Integration | What it does | Status | Documentation | Package |
 | --- | --- | --- | --- | --- |
-| **Agent tools core** | One shared foundation for your agent tools. | Available | [View Agent tools core on PyPI](https://pypi.org/project/geonode-scraper-tools-core/) | [View on PyPI](https://pypi.org/project/geonode-scraper-tools-core/) |
+| **Agent tools core** | Shared Python tools for custom agent integrations. | Available | [View Agent tools core on PyPI](https://pypi.org/project/geonode-scraper-tools-core/) | [View on PyPI](https://pypi.org/project/geonode-scraper-tools-core/) |
 | **CrewAI** | Put fresh web data in your crew’s hands. | Available | [Geonode CrewAI docs](https://docs.geonode.com/docs/scraper-api/developer-guides/crewai) | [View on PyPI](https://pypi.org/project/geonode-scraper-crewai/) |
 | **LangChain** | Give your LangChain agents web data tools. | Available | [Geonode LangChain docs](https://docs.geonode.com/docs/scraper-api/developer-guides/langchain) | [View on PyPI](https://pypi.org/project/geonode-scraper-langchain/) |
 
@@ -61,6 +61,12 @@ Start with the [MCP setup guide](https://docs.geonode.com/docs/scraper-api/guide
 - **n8n** is a self-hosted community node; n8n Cloud support and platform verification have not been established.
 - **Make and Zapier** are private apps. [Contact Geonode](https://geonode.com/contact) to discuss access; there is no verified public marketplace listing linked here.
 - The agent onboarding guide is being reviewed. Use the current [MCP documentation](https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview) for setup.
+
+## What we are considering next
+
+Go SDK · Java SDK · Rust SDK · Ruby SDK · PHP SDK · .NET SDK · LlamaIndex · OpenAI Agents SDK · Vercel AI SDK · Mastra · Dify · Coze · Pipedream · Google Sheets · Airbyte · Snowflake · BigQuery · Amazon S3 · Postman
+
+These are proposals, not released integrations or committed launch dates. [Tell us which workflow you need](https://geonode.com/contact). The machine-readable catalog below covers the current inventory; proposed connectors do not have install commands or package listings yet.
 
 ## Machine-readable catalog
 
