@@ -1,0 +1,912 @@
+[
+  {
+    "schema_version": 1,
+    "id": "agent-tools",
+    "slug": "agent-tools",
+    "name": "Agent tools core",
+    "category": "frameworks",
+    "summary": "One shared foundation for your agent tools.",
+    "description": "Build custom agent integrations on the shared Geonode runtime and operation registry used by the LangChain and CrewAI packages.",
+    "lifecycle": "published",
+    "platform_verification": "not-applicable",
+    "platform": "Python",
+    "version": "0.5.1",
+    "runtime": "Python 3.10+",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "verified",
+      "connection": "not-tested",
+      "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review.",
+      "evidence": [
+        "https://pypi.org/pypi/geonode-scraper-tools-core/json"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": "pip install geonode-scraper-tools-core==0.5.1",
+      "status": "package-verified",
+      "note": "Uses the existing published package name. No package rename is required."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://pypi.org/project/geonode-scraper-tools-core/",
+      "source": null,
+      "package": "https://pypi.org/project/geonode-scraper-tools-core/",
+      "changelog": "https://pypi.org/project/geonode-scraper-tools-core/",
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Build a framework adapter",
+        "description": "Reuse the operation registry when connecting another agent framework."
+      },
+      {
+        "title": "Share request settings",
+        "description": "Configure authentication, timeouts and polling consistently across tools."
+      }
+    ],
+    "prerequisites": [
+      "Python 3.10+",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "langchain",
+      "crewai",
+      "python"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "api",
+    "slug": "api",
+    "name": "REST API",
+    "category": "api",
+    "summary": "Use Geonode from any language.",
+    "description": "Call the Scraper API directly over HTTP for extraction, batches, crawling, mapping, search and webhooks. No SDK required.",
+    "lifecycle": "published",
+    "platform_verification": "not-applicable",
+    "platform": "HTTP",
+    "version": null,
+    "runtime": "HTTPS client",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "not-applicable",
+      "connection": "not-tested",
+      "note": "Official API documentation is available. Authenticated requests have not been run in this review.",
+      "evidence": [
+        "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": null,
+      "status": "documented",
+      "note": "Use the official setup documentation."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://docs.geonode.com/docs/scraper-api/v1/reference",
+      "source": null,
+      "package": null,
+      "changelog": null,
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Build with your own stack",
+        "description": "Use standard HTTP requests from a language or platform of your choice."
+      },
+      {
+        "title": "Connect a custom service",
+        "description": "Integrate asynchronous extraction and completion webhooks into your service."
+      }
+    ],
+    "prerequisites": [
+      "HTTPS client",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "python",
+      "typescript",
+      "cli"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "cli",
+    "slug": "cli",
+    "name": "CLI",
+    "category": "cli",
+    "summary": "From a URL to web data, in your terminal.",
+    "description": "Use gscraper to extract pages, run crawls and batches, search, and inspect usage. Export JSON or YAML for your scripts.",
+    "lifecycle": "published",
+    "platform_verification": "not-applicable",
+    "platform": "Terminal",
+    "version": "0.2.2",
+    "runtime": "Python 3.10+",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "verified",
+      "connection": "not-tested",
+      "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review.",
+      "evidence": [
+        "https://pypi.org/pypi/geonode-scraper-cli/json"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": "pipx install geonode-scraper-cli==0.2.2",
+      "status": "package-verified",
+      "note": "Uses the existing published package name. No package rename is required."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://pypi.org/project/geonode-scraper-cli/",
+      "source": null,
+      "package": "https://pypi.org/project/geonode-scraper-cli/",
+      "changelog": "https://pypi.org/project/geonode-scraper-cli/",
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Script a repeatable extraction",
+        "description": "Pipe JSON output into your existing command-line workflow."
+      },
+      {
+        "title": "Inspect jobs from your terminal",
+        "description": "Check background jobs and wait for their results."
+      }
+    ],
+    "prerequisites": [
+      "Python 3.10+",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "python",
+      "api",
+      "mcp"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "crewai",
+    "slug": "crewai",
+    "name": "CrewAI",
+    "category": "frameworks",
+    "summary": "Put fresh web data in your crew’s hands.",
+    "description": "Equip CrewAI agents with extraction, crawling and search tools. Return structured success and error results that agents can act on.",
+    "lifecycle": "published",
+    "platform_verification": "not-applicable",
+    "platform": "CrewAI",
+    "version": "0.4.2",
+    "runtime": "Python 3.10–3.13",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "verified",
+      "connection": "not-tested",
+      "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review.",
+      "evidence": [
+        "https://pypi.org/pypi/geonode-scraper-crewai/json"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": "pip install geonode-scraper-crewai==0.4.2",
+      "status": "package-verified",
+      "note": "Uses the existing published package name. No package rename is required."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://docs.geonode.com/docs/scraper-api/developer-guides/crewai",
+      "source": null,
+      "package": "https://pypi.org/project/geonode-scraper-crewai/",
+      "changelog": "https://pypi.org/project/geonode-scraper-crewai/",
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Give a researcher live sources",
+        "description": "Attach extraction tools to a research agent and pass its findings to your crew."
+      },
+      {
+        "title": "Choose a focused toolset",
+        "description": "Limit available operations to extract, map and search for a clearer workflow."
+      }
+    ],
+    "prerequisites": [
+      "Python 3.10–3.13",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "langchain",
+      "agent-tools",
+      "python"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "langchain",
+    "slug": "langchain",
+    "name": "LangChain",
+    "category": "frameworks",
+    "summary": "Give your LangChain agents web data tools.",
+    "description": "Connect Geonode operations as LangChain StructuredTool objects. Choose only the tools your agent needs for extraction, mapping or search.",
+    "lifecycle": "published",
+    "platform_verification": "not-applicable",
+    "platform": "LangChain",
+    "version": "0.4.2",
+    "runtime": "Python 3.10+",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "verified",
+      "connection": "not-tested",
+      "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review.",
+      "evidence": [
+        "https://pypi.org/pypi/geonode-scraper-langchain/json"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": "pip install geonode-scraper-langchain==0.4.2",
+      "status": "package-verified",
+      "note": "Uses the existing published package name. No package rename is required."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://docs.geonode.com/docs/scraper-api/developer-guides/langchain",
+      "source": null,
+      "package": "https://pypi.org/project/geonode-scraper-langchain/",
+      "changelog": "https://pypi.org/project/geonode-scraper-langchain/",
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Ground an agent in sources",
+        "description": "Let an agent read current pages before composing an answer."
+      },
+      {
+        "title": "Build a research workflow",
+        "description": "Combine search, page extraction and your own reasoning steps."
+      }
+    ],
+    "prerequisites": [
+      "Python 3.10+",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "crewai",
+      "agent-tools",
+      "mcp"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "make",
+    "slug": "make",
+    "name": "Make",
+    "category": "automation",
+    "summary": "Connect extraction to a Make scenario.",
+    "description": "A private Geonode app for Make. Contact the team to discuss access and the operations supported by your workflow.",
+    "lifecycle": "private",
+    "platform_verification": "not-verified",
+    "platform": "Make",
+    "version": null,
+    "runtime": "Private app access",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "not-applicable",
+      "connection": "not-tested",
+      "note": "Private availability reported by the Geonode team. No public marketplace listing or account-console access verified.",
+      "evidence": []
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": null,
+      "status": "private",
+      "note": "Use the official setup documentation."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://docs.geonode.com/docs/scraper-api",
+      "source": null,
+      "package": null,
+      "changelog": null,
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Explore a Make workflow",
+        "description": "Describe the data you need and where your scenario should send it."
+      },
+      {
+        "title": "Discuss private access",
+        "description": "Check access and supported operations with the Geonode team."
+      }
+    ],
+    "prerequisites": [
+      "Private app access",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "n8n",
+      "zapier",
+      "api"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "mcp",
+    "slug": "mcp",
+    "name": "Geonode MCP Server",
+    "category": "ai-agents",
+    "summary": "Connect your AI assistant to the live web.",
+    "description": "Give compatible AI assistants web extraction, crawling and search tools through the Model Context Protocol. Start with keyless page extraction, or add an API key for the full toolset.",
+    "lifecycle": "published",
+    "platform_verification": "not-applicable",
+    "platform": "Streamable HTTP",
+    "version": "1.0.0",
+    "runtime": "Compatible remote MCP client",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "not-applicable",
+      "connection": "not-tested",
+      "note": "Remote health, handshake and anonymous tool discovery verified. Authenticated tools and client-specific installs have not been tested in this review.",
+      "evidence": [
+        "https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview",
+        "https://registry.modelcontextprotocol.io/v0.1/servers/io.geonode%2Fscraper/versions/latest"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key",
+        "anonymous-extract"
+      ],
+      "oauth_status": "planned",
+      "note": "API key recommended for the full toolset. Keyless synchronous extraction is also documented: 5 requests/minute, 1 concurrent request and 100 MB/day; no JavaScript rendering or country targeting."
+    },
+    "installation": {
+      "command": null,
+      "status": "documented",
+      "note": "Use the official setup documentation."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview",
+      "source": null,
+      "package": null,
+      "changelog": null,
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Turn a page into context",
+        "description": "Extract a page as Markdown for your assistant to read."
+      },
+      {
+        "title": "Research from your editor",
+        "description": "Let your assistant find and work with web data without switching tools."
+      }
+    ],
+    "prerequisites": [
+      "A client supporting remote Streamable HTTP MCP.",
+      "A Geonode API key for tools beyond anonymous page extraction."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "python",
+      "skills",
+      "langchain"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "n8n",
+    "slug": "n8n",
+    "name": "n8n",
+    "category": "automation",
+    "summary": "Bring web data into your n8n workflows.",
+    "description": "Extract pages, run batches and crawls, or trigger a workflow when a job finishes. Available as a community node for self-hosted n8n.",
+    "lifecycle": "published",
+    "platform_verification": "not-verified",
+    "platform": "Self-hosted n8n",
+    "version": "0.2.3",
+    "runtime": "Self-hosted n8n · Node.js 20.15+",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "verified",
+      "connection": "not-tested",
+      "note": "Package verified on npm. Self-hosted community node; not n8n-verified or available on n8n Cloud. Workflow execution has not been tested in this review.",
+      "evidence": [
+        "https://registry.npmjs.org/n8n-nodes-scraperapi"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": null,
+      "status": "documented",
+      "note": "Uses the existing published package name. No package rename is required."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
+      "source": null,
+      "package": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
+      "changelog": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Extract to your next step",
+        "description": "Add the Scraper API node and send the extracted Markdown to another node."
+      },
+      {
+        "title": "Trigger on completion",
+        "description": "Use the Scraper API Trigger for extraction or crawl completion events."
+      }
+    ],
+    "prerequisites": [
+      "Self-hosted n8n · Node.js 20.15+",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "make",
+      "zapier",
+      "api"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "python",
+    "slug": "python",
+    "name": "Python SDK",
+    "category": "sdks",
+    "summary": "Web data, with the Python you already know.",
+    "description": "Extract pages, run batches and crawls, map sites, search the web and manage webhooks with typed Python models.",
+    "lifecycle": "published",
+    "platform_verification": "not-applicable",
+    "platform": "Python",
+    "version": "0.6.1",
+    "runtime": "Python 3.10+",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "verified",
+      "connection": "not-tested",
+      "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review.",
+      "evidence": [
+        "https://pypi.org/pypi/geonode-scraper-sdk/json"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": "pip install geonode-scraper-sdk==0.6.1",
+      "status": "package-verified",
+      "note": "Uses the existing published package name. No package rename is required."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://docs.geonode.com/docs/scraper-api/developer-guides/python-sdk",
+      "source": null,
+      "package": "https://pypi.org/project/geonode-scraper-sdk/",
+      "changelog": "https://pypi.org/project/geonode-scraper-sdk/",
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Build a data pipeline",
+        "description": "Extract Markdown or HTML and pass it into your processing pipeline."
+      },
+      {
+        "title": "Collect research sources",
+        "description": "Crawl a site with a depth and page limit, then inspect the results."
+      }
+    ],
+    "prerequisites": [
+      "Python 3.10+",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "typescript",
+      "cli",
+      "langchain"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "skills",
+    "slug": "skills",
+    "name": "Agent setup guide",
+    "category": "ai-agents",
+    "summary": "A starting point for connecting your agent.",
+    "description": "An existing Geonode SKILL.md introduces agent onboarding. An updated guide and client recipes are being prepared; use the MCP documentation for current authentication and CLI support.",
+    "lifecycle": "audit-required",
+    "platform_verification": "not-applicable",
+    "platform": "Agent instructions",
+    "version": null,
+    "runtime": "Client-specific instructions",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "not-applicable",
+      "connection": "not-tested",
+      "note": "Existing guide needs an update: its authentication and CLI statements lag behind current documentation.",
+      "evidence": [
+        "https://docs.geonode.com/agent-onboarding/SKILL.md"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": null,
+      "status": "documented",
+      "note": "Use the official setup documentation."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://docs.geonode.com/docs/scraper-api",
+      "source": null,
+      "package": null,
+      "changelog": null,
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Set up a compatible client",
+        "description": "Follow the maintained MCP client documentation for your editor or assistant."
+      },
+      {
+        "title": "Understand connection choices",
+        "description": "Review prerequisites and authentication before changing client configuration."
+      }
+    ],
+    "prerequisites": [
+      "Client-specific instructions",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "mcp",
+      "cli",
+      "python"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "typescript",
+    "slug": "typescript",
+    "name": "TypeScript SDK",
+    "category": "sdks",
+    "summary": "Typed web extraction for your application.",
+    "description": "Use a typed client for extraction, crawling, search and webhooks. Integrate web data into your Node.js service with native fetch support.",
+    "lifecycle": "published",
+    "platform_verification": "not-applicable",
+    "platform": "TypeScript",
+    "version": "0.6.1",
+    "runtime": "Node.js 18+",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "verified",
+      "connection": "not-tested",
+      "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review.",
+      "evidence": [
+        "https://registry.npmjs.org/@geonode_scraper%2fscraper-sdk"
+      ]
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": "npm install @geonode_scraper/scraper-sdk@0.6.1",
+      "status": "package-verified",
+      "note": "Uses the existing published package name. No package rename is required."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
+      "source": null,
+      "package": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
+      "changelog": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Power an application",
+        "description": "Fetch a page as Markdown from a server-side route."
+      },
+      {
+        "title": "React to completed jobs",
+        "description": "Register a webhook to process results when an extraction finishes."
+      }
+    ],
+    "prerequisites": [
+      "Node.js 18+",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "python",
+      "api",
+      "n8n"
+    ]
+  },
+  {
+    "schema_version": 1,
+    "id": "zapier",
+    "slug": "zapier",
+    "name": "Zapier",
+    "category": "automation",
+    "summary": "Bring Geonode into your Zaps.",
+    "description": "A private Geonode app for Zapier. Talk to the team about access and supported actions before planning a production workflow.",
+    "lifecycle": "private",
+    "platform_verification": "not-verified",
+    "platform": "Zapier",
+    "version": "1.0.2",
+    "runtime": "Private app access",
+    "last_verified": "2026-10-21",
+    "verification": {
+      "package": "not-applicable",
+      "connection": "not-tested",
+      "note": "Private availability reported by the Geonode team. No public marketplace listing or account-console access verified.",
+      "evidence": []
+    },
+    "capabilities": {
+      "confirmed": [],
+      "planned": []
+    },
+    "auth": {
+      "supported": [
+        "api-key"
+      ],
+      "oauth_status": "not-supported",
+      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+    },
+    "installation": {
+      "command": null,
+      "status": "private",
+      "note": "Use the official setup documentation."
+    },
+    "links": {
+      "website": "https://geonode.com/integrations",
+      "docs": "https://docs.geonode.com/docs/scraper-api",
+      "source": null,
+      "package": null,
+      "changelog": null,
+      "support": "https://geonode.com/contact"
+    },
+    "use_cases": [
+      {
+        "title": "Plan a connected workflow",
+        "description": "Tell us which event should trigger extraction and which app should receive it."
+      },
+      {
+        "title": "Check available actions",
+        "description": "Confirm the private app’s current actions and access with the team."
+      }
+    ],
+    "prerequisites": [
+      "Private app access",
+      "A Geonode API key and an active plan for authenticated requests."
+    ],
+    "troubleshooting": [
+      {
+        "question": "My API key is not accepted.",
+        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+      },
+      {
+        "question": "The request is rate limited.",
+        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+      }
+    ],
+    "related": [
+      "n8n",
+      "make",
+      "api"
+    ]
+  }
+]
