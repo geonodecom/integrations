@@ -1,82 +1,6 @@
 [
   {
     "schema_version": 1,
-    "id": "agent-tools",
-    "slug": "agent-tools",
-    "name": "Agent tools core",
-    "category": "frameworks",
-    "summary": "Shared Python tools for custom agent integrations.",
-    "description": "Build custom adapters with the Python runtime and operation schemas used by the Geonode LangChain, CrewAI and CLI packages. This library wraps the Python SDK; it is not an MCP server.",
-    "lifecycle": "published",
-    "platform_verification": "not-applicable",
-    "platform": "Python",
-    "version": "0.5.1",
-    "runtime": "Python 3.10+",
-    "last_verified": "2026-10-21",
-    "verification": {
-      "package": "verified",
-      "connection": "not-tested",
-      "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review.",
-      "evidence": [
-        "https://pypi.org/pypi/geonode-scraper-tools-core/json"
-      ]
-    },
-    "capabilities": {
-      "confirmed": [],
-      "planned": []
-    },
-    "auth": {
-      "supported": [
-        "api-key"
-      ],
-      "oauth_status": "not-supported",
-      "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
-    },
-    "installation": {
-      "command": "pip install geonode-scraper-tools-core==0.5.1",
-      "status": "package-verified",
-      "note": "Uses the existing published package name. No package rename is required."
-    },
-    "links": {
-      "website": "https://geonode.com/integrations",
-      "docs": "https://pypi.org/project/geonode-scraper-tools-core/",
-      "source": null,
-      "package": "https://pypi.org/project/geonode-scraper-tools-core/",
-      "changelog": "https://pypi.org/project/geonode-scraper-tools-core/",
-      "support": "https://geonode.com/contact"
-    },
-    "use_cases": [
-      {
-        "title": "Build a framework adapter",
-        "description": "Reuse the operation registry when connecting another agent framework."
-      },
-      {
-        "title": "Share request settings",
-        "description": "Configure authentication, timeouts and polling consistently across tools."
-      }
-    ],
-    "prerequisites": [
-      "Python 3.10+",
-      "A Geonode API key and an active plan for authenticated requests."
-    ],
-    "troubleshooting": [
-      {
-        "question": "My API key is not accepted.",
-        "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
-      },
-      {
-        "question": "The request is rate limited.",
-        "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
-      }
-    ],
-    "related": [
-      "langchain",
-      "crewai",
-      "python"
-    ]
-  },
-  {
-    "schema_version": 1,
     "id": "api",
     "slug": "api",
     "name": "REST API",
@@ -192,7 +116,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://pypi.org/project/geonode-scraper-cli/",
-      "source": null,
+      "source": "https://github.com/geonodecom/cli",
+      "source_visibility": "private",
       "package": "https://pypi.org/project/geonode-scraper-cli/",
       "changelog": "https://pypi.org/project/geonode-scraper-cli/",
       "support": "https://geonode.com/contact"
@@ -230,7 +155,7 @@
   {
     "schema_version": 1,
     "id": "crewai",
-    "slug": "crewai",
+    "slug": "integration-crewai",
     "name": "CrewAI",
     "category": "frameworks",
     "summary": "Put fresh web data in your crew’s hands.",
@@ -268,7 +193,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://docs.geonode.com/docs/scraper-api/developer-guides/crewai",
-      "source": null,
+      "source": "https://github.com/geonodecom/integration-crewai",
+      "source_visibility": "private",
       "package": "https://pypi.org/project/geonode-scraper-crewai/",
       "changelog": "https://pypi.org/project/geonode-scraper-crewai/",
       "support": "https://geonode.com/contact"
@@ -306,7 +232,7 @@
   {
     "schema_version": 1,
     "id": "langchain",
-    "slug": "langchain",
+    "slug": "integration-langchain",
     "name": "LangChain",
     "category": "frameworks",
     "summary": "Give your LangChain agents web data tools.",
@@ -344,7 +270,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://docs.geonode.com/docs/scraper-api/developer-guides/langchain",
-      "source": null,
+      "source": "https://github.com/geonodecom/integration-langchain",
+      "source_visibility": "private",
       "package": "https://pypi.org/project/geonode-scraper-langchain/",
       "changelog": "https://pypi.org/project/geonode-scraper-langchain/",
       "support": "https://geonode.com/contact"
@@ -382,7 +309,7 @@
   {
     "schema_version": 1,
     "id": "make",
-    "slug": "make",
+    "slug": "integration-make",
     "name": "Make",
     "category": "automation",
     "summary": "Connect extraction to a Make scenario.",
@@ -418,7 +345,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://docs.geonode.com/docs/scraper-api",
-      "source": null,
+      "source": "https://github.com/geonodecom/integration-make",
+      "source_visibility": "private",
       "package": null,
       "changelog": null,
       "support": "https://geonode.com/contact"
@@ -496,7 +424,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview",
-      "source": null,
+      "source": "https://github.com/geonodecom/mcp",
+      "source_visibility": "private",
       "package": null,
       "changelog": null,
       "support": "https://geonode.com/contact"
@@ -534,7 +463,7 @@
   {
     "schema_version": 1,
     "id": "n8n",
-    "slug": "n8n",
+    "slug": "integration-n8n",
     "name": "n8n",
     "category": "automation",
     "summary": "Bring web data into your n8n workflows.",
@@ -572,7 +501,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
-      "source": null,
+      "source": "https://github.com/geonodecom/integration-n8n",
+      "source_visibility": "private",
       "package": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
       "changelog": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
       "support": "https://geonode.com/contact"
@@ -610,7 +540,7 @@
   {
     "schema_version": 1,
     "id": "python",
-    "slug": "python",
+    "slug": "sdk-python",
     "name": "Python SDK",
     "category": "sdks",
     "summary": "Web data, with the Python you already know.",
@@ -648,7 +578,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://docs.geonode.com/docs/scraper-api/developer-guides/python-sdk",
-      "source": null,
+      "source": "https://github.com/geonodecom/sdk-python",
+      "source_visibility": "private",
       "package": "https://pypi.org/project/geonode-scraper-sdk/",
       "changelog": "https://pypi.org/project/geonode-scraper-sdk/",
       "support": "https://geonode.com/contact"
@@ -724,7 +655,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://docs.geonode.com/docs/scraper-api",
-      "source": null,
+      "source": "https://github.com/geonodecom/skills",
+      "source_visibility": "private",
       "package": null,
       "changelog": null,
       "support": "https://geonode.com/contact"
@@ -762,7 +694,7 @@
   {
     "schema_version": 1,
     "id": "typescript",
-    "slug": "typescript",
+    "slug": "sdk-typescript",
     "name": "TypeScript SDK",
     "category": "sdks",
     "summary": "Typed web extraction for your application.",
@@ -800,7 +732,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
-      "source": null,
+      "source": "https://github.com/geonodecom/sdk-typescript",
+      "source_visibility": "private",
       "package": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
       "changelog": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
       "support": "https://geonode.com/contact"
@@ -838,7 +771,7 @@
   {
     "schema_version": 1,
     "id": "zapier",
-    "slug": "zapier",
+    "slug": "integration-zapier",
     "name": "Zapier",
     "category": "automation",
     "summary": "Bring Geonode into your Zaps.",
@@ -874,7 +807,8 @@
     "links": {
       "website": "https://geonode.com/integrations",
       "docs": "https://docs.geonode.com/docs/scraper-api",
-      "source": null,
+      "source": "https://github.com/geonodecom/integration-zapier",
+      "source_visibility": "private",
       "package": null,
       "changelog": null,
       "support": "https://geonode.com/contact"

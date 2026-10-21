@@ -4,7 +4,7 @@
 
 Web data for your applications, AI agents and workflows. Extract readable page content, discover URLs, and connect the results to the tools you already use.
 
-**[Create an account →](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Documentation](https://docs.geonode.com/docs/scraper-api) &nbsp; · &nbsp; [Geonode](https://geonode.com)
+**[Sign up to get 10,000 free credits](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Documentation](https://docs.geonode.com/docs/scraper-api) &nbsp; · &nbsp; [Geonode](https://geonode.com)
 
 [Start here](#start-here) · [SDKs](#sdks) · [Agent frameworks](#agent-frameworks) · [Automation](#automation) · [Proposed integrations](#proposed-integrations) · [Catalog](#machine-readable-catalog)
 
@@ -43,7 +43,7 @@ Give an agent tools to extract pages, map sites, search the web and work with lo
 
 **Agent tools core** provides shared schemas, request handling, polling and an operation registry above the Python SDK. LangChain, CrewAI and the CLI install it as a dependency.
 
-Install it directly when building a custom adapter. It is a Python library, not an MCP server.
+Install it directly when building a custom adapter. This is a supporting Python dependency, not a separate integration or a planned standalone repository.
 
 [View agent tools core on PyPI](https://pypi.org/project/geonode-scraper-tools-core/)
 
@@ -81,27 +81,26 @@ These are proposals, not released integrations or committed launch dates. The ca
 
 [**Open catalog.json →**](./catalog.json)
 
-The 12 current records include package versions, installation commands, documentation links, compatibility and review dates. Availability is recorded separately from verification: a published package does not establish a successful end-to-end connection test.
+The 11 current records include package versions, installation commands, documentation links, compatibility and review dates. Availability is recorded separately from verification: a published package does not establish a successful end-to-end connection test.
 
-For programmatic use, check `lifecycle`, `installation.status` and `verification` before choosing an installation path. A null source or package link means no public destination is listed.
+For programmatic use, check `lifecycle`, `installation.status` and `verification` before choosing an installation path. Check source_visibility before linking to source; private GitHub URLs require access. A null link means no destination is listed.
 
 <details>
-<summary><strong>Planned source repositories</strong></summary>
+<summary><strong>Source repositories · private</strong></summary>
 
-These are the intended source destinations. Repositories may be private or not yet created; use the published packages and setup guides above today. Repository names do not change the current npm or PyPI package names.
+These repositories have been created and remain private while we prepare them for release. GitHub access is required; use the published packages and setup guides above today. Repository names do not change the current npm or PyPI package names.
 
-| Integration | Intended GitHub repository |
+| Integration | GitHub repository |
 | --- | --- |
 | MCP | [geonodecom/mcp](https://github.com/geonodecom/mcp) |
 | CLI | [geonodecom/cli](https://github.com/geonodecom/cli) |
-| Python SDK | [geonodecom/python-sdk](https://github.com/geonodecom/python-sdk) |
-| TypeScript SDK | [geonodecom/typescript-sdk](https://github.com/geonodecom/typescript-sdk) |
-| LangChain | [geonodecom/langchain](https://github.com/geonodecom/langchain) |
-| CrewAI | [geonodecom/crewai](https://github.com/geonodecom/crewai) |
-| n8n | [geonodecom/n8n](https://github.com/geonodecom/n8n) |
-| Agent tools core | [geonodecom/agent-tools](https://github.com/geonodecom/agent-tools) |
-| Make | [geonodecom/make](https://github.com/geonodecom/make) |
-| Zapier | [geonodecom/zapier](https://github.com/geonodecom/zapier) |
+| Python SDK | [geonodecom/sdk-python](https://github.com/geonodecom/sdk-python) |
+| TypeScript SDK | [geonodecom/sdk-typescript](https://github.com/geonodecom/sdk-typescript) |
+| LangChain | [geonodecom/integration-langchain](https://github.com/geonodecom/integration-langchain) |
+| CrewAI | [geonodecom/integration-crewai](https://github.com/geonodecom/integration-crewai) |
+| n8n | [geonodecom/integration-n8n](https://github.com/geonodecom/integration-n8n) |
+| Make | [geonodecom/integration-make](https://github.com/geonodecom/integration-make) |
+| Zapier | [geonodecom/integration-zapier](https://github.com/geonodecom/integration-zapier) |
 | Agent skills | [geonodecom/skills](https://github.com/geonodecom/skills) |
 
 </details>
@@ -112,4 +111,4 @@ The agent setup guide is currently in review; use the [current MCP documentation
 
 Authenticated requests use your Geonode plan and limits. [Read the API pricing guide](https://docs.geonode.com/docs/scraper-api/additional-resources/pricing). Assistants and automation platforms may have separate subscriptions.
 
-**[Create your account](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Get help](https://geonode.com/contact) &nbsp; · &nbsp; [Browse all integrations](https://geonode.com/integrations)
+**[Sign up to get 10,000 free credits](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Get help](https://geonode.com/contact) &nbsp; · &nbsp; [Browse all integrations](https://geonode.com/integrations)
