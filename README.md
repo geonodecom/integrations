@@ -1,10 +1,10 @@
-![Geonode — Web scraping API, MCP, SDKs and automation connectors](./assets/banner.svg)
+![Geonode: Web scraping API, MCP, SDKs and automation connectors](./assets/banner.svg)
 
-# Geonode Integrations — Web Scraping API, MCP & Automation
+# Geonode Integrations: Web Scraping API, MCP & Automation
 
 Web data for your applications, AI agents and workflows. Extract readable page content, discover URLs, and connect the results to the tools you already use.
 
-**[Sign up to get 10,000 free credits](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Documentation](https://docs.geonode.com/docs/scraper-api) &nbsp; · &nbsp; [Geonode](https://geonode.com)
+**[Try Geonode for free](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Documentation](https://docs.geonode.com/docs/scraper-api) &nbsp; · &nbsp; [Geonode](https://geonode.com)
 
 [Start here](#start-here) · [SDKs](#sdks) · [Agent frameworks](#agent-frameworks) · [Automation](#automation) · [Proposed integrations](#proposed-integrations) · [Catalog](#machine-readable-catalog)
 
@@ -110,4 +110,4 @@ Agent skills are documentation resources, not an integration. The [skills source
 
 Authenticated requests use your Geonode plan and limits. [Read the API pricing guide](https://docs.geonode.com/docs/scraper-api/additional-resources/pricing). Assistants and automation platforms may have separate subscriptions.
 
-**[Sign up to get 10,000 free credits](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Get help](https://geonode.com/contact) &nbsp; · &nbsp; [Browse all integrations](https://geonode.com/integrations)
+**[Try Geonode for free](https://app.geonode.com/sign-up)** &nbsp; · &nbsp; [Get help](https://geonode.com/contact) &nbsp; · &nbsp; [Browse all integrations](https://geonode.com/integrations)
