@@ -1,0 +1,775 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/geonodecom/integrations/main/feed.schema.json",
+  "title": "Geonode integrations feed",
+  "type": "object",
+  "required": [
+    "feed_version",
+    "generated_at",
+    "source",
+    "categories",
+    "lifecycle_labels",
+    "integrations",
+    "proposed"
+  ],
+  "properties": {
+    "feed_version": {
+      "const": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "repository",
+        "revision"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "minLength": 1
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "lifecycle_labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "integrations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/integration"
+      }
+    },
+    "proposed": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/proposed"
+      }
+    }
+  },
+  "definitions": {
+    "integration": {
+      "type": "object",
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "ai-agents",
+            "sdks",
+            "frameworks",
+            "automation",
+            "api",
+            "cli"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seo_title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lifecycle": {
+          "type": "string",
+          "enum": [
+            "published",
+            "private",
+            "planned",
+            "audit-required"
+          ]
+        },
+        "platform_verification": {
+          "type": "string",
+          "enum": [
+            "not-applicable",
+            "not-verified",
+            "verified"
+          ]
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "runtime": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_verified": {
+          "type": "string",
+          "format": "date"
+        },
+        "verification": {
+          "type": "object",
+          "properties": {
+            "package": {
+              "type": "string",
+              "enum": [
+                "verified",
+                "not-applicable",
+                "unverified"
+              ]
+            },
+            "connection": {
+              "type": "string",
+              "enum": [
+                "not-tested",
+                "passed"
+              ]
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uri",
+                "pattern": "^https://[^\\s]+$"
+              }
+            }
+          },
+          "required": [
+            "package",
+            "connection",
+            "note",
+            "evidence"
+          ],
+          "additionalProperties": true
+        },
+        "capabilities": {
+          "type": "object",
+          "properties": {
+            "confirmed": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "planned": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "required": [
+            "confirmed",
+            "planned"
+          ],
+          "additionalProperties": true
+        },
+        "auth": {
+          "type": "object",
+          "properties": {
+            "supported": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "oauth_status": {
+              "type": "string",
+              "enum": [
+                "planned",
+                "not-supported",
+                "supported"
+              ]
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "supported",
+            "oauth_status",
+            "note"
+          ],
+          "additionalProperties": true
+        },
+        "installation": {
+          "type": "object",
+          "properties": {
+            "command": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "package-verified",
+                "documented",
+                "proposed",
+                "private"
+              ]
+            },
+            "note": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "command",
+            "status",
+            "note"
+          ],
+          "additionalProperties": true
+        },
+        "links": {
+          "type": "object",
+          "properties": {
+            "website": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://[^\\s]+$"
+            },
+            "docs": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://[^\\s]+$"
+            },
+            "source": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://[^\\s]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "package": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://[^\\s]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "changelog": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "uri",
+                  "pattern": "^https://[^\\s]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "support": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://[^\\s]+$"
+            },
+            "source_visibility": {
+              "type": "string",
+              "enum": [
+                "public",
+                "private"
+              ]
+            }
+          },
+          "required": [
+            "website",
+            "docs",
+            "source",
+            "package",
+            "changelog",
+            "support"
+          ],
+          "additionalProperties": true
+        },
+        "use_cases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "title",
+              "description"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "troubleshooting": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": {
+                "type": "string",
+                "minLength": 1
+              },
+              "answer": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "question",
+              "answer"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "related": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "developer_overview": {
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "connection",
+            "operations",
+            "behavior"
+          ],
+          "properties": {
+            "connection": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": true,
+                "required": [
+                  "label",
+                  "value"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            "operations": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": true,
+                "required": [
+                  "name",
+                  "method",
+                  "path",
+                  "input",
+                  "output",
+                  "docs"
+                ],
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "method": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "path": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "input": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "output": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "docs": {
+                    "type": "string",
+                    "minLength": 1,
+                    "format": "uri"
+                  }
+                }
+              }
+            },
+            "behavior": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": true,
+                "required": [
+                  "title",
+                  "description",
+                  "docs",
+                  "link_label"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "description": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "docs": {
+                    "type": "string",
+                    "minLength": 1,
+                    "format": "uri"
+                  },
+                  "link_label": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "logo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^assets/[a-z0-9-]+\\.svg$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "guide": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/guide"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema_version",
+        "id",
+        "slug",
+        "name",
+        "category",
+        "summary",
+        "description",
+        "lifecycle",
+        "platform_verification",
+        "platform",
+        "version",
+        "runtime",
+        "last_verified",
+        "verification",
+        "capabilities",
+        "auth",
+        "installation",
+        "links",
+        "use_cases",
+        "prerequisites",
+        "troubleshooting",
+        "related",
+        "logo",
+        "guide"
+      ],
+      "additionalProperties": true
+    },
+    "guide": {
+      "type": "object",
+      "required": [
+        "intro",
+        "sections"
+      ],
+      "properties": {
+        "intro": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "paragraphs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "code": {
+                "type": "object",
+                "required": [
+                  "label",
+                  "value"
+                ],
+                "properties": {
+                  "label": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "value": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "expected": {
+                "type": "string",
+                "minLength": 1
+              },
+              "links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "label",
+                    "url"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "url": {
+                      "type": "string",
+                      "pattern": "^https://[^\\s]+$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "proposed": {
+      "type": "object",
+      "required": [
+        "id",
+        "slug",
+        "name",
+        "category",
+        "lifecycle",
+        "platform",
+        "summary",
+        "description",
+        "workflow",
+        "outcome",
+        "considerations",
+        "current_path",
+        "logo"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "slug": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "ai-agents",
+            "sdks",
+            "frameworks",
+            "automation",
+            "api",
+            "cli"
+          ]
+        },
+        "lifecycle": {
+          "const": "planned"
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "workflow": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "outcome": {
+          "type": "string",
+          "minLength": 1
+        },
+        "considerations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "current_path": {
+          "type": "object",
+          "required": [
+            "label",
+            "url"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://[^\\s]+$"
+            },
+            "integration_id": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "official_resources": {
+          "type": "object"
+        },
+        "logo": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^assets/[a-z0-9-]+\\.svg$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
