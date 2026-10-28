@@ -1,0 +1,1868 @@
+{
+  "feed_version": 1,
+  "generated_at": "2026-10-28T12:25:50Z",
+  "source": {
+    "repository": "geonodecom/geonode-integrations-management",
+    "revision": "db8c56d"
+  },
+  "categories": [
+    {
+      "id": "ai-agents",
+      "label": "AI & Agents"
+    },
+    {
+      "id": "sdks",
+      "label": "SDKs"
+    },
+    {
+      "id": "frameworks",
+      "label": "Frameworks"
+    },
+    {
+      "id": "automation",
+      "label": "Automation"
+    },
+    {
+      "id": "api",
+      "label": "API"
+    },
+    {
+      "id": "cli",
+      "label": "CLI"
+    }
+  ],
+  "lifecycle_labels": {
+    "published": "Available",
+    "private": "Private app",
+    "planned": "Coming soon",
+    "audit-required": "In review"
+  },
+  "integrations": [
+    {
+      "schema_version": 1,
+      "id": "api",
+      "slug": "api",
+      "name": "REST API",
+      "category": "api",
+      "summary": "Extract pages, crawl sites and search the web over HTTP.",
+      "seo_title": "Geonode Scraper API — Web Scraping, Crawling & Search",
+      "developer_overview": {
+        "connection": [
+          {
+            "label": "Base URL",
+            "value": "https://scraper.geonode.io"
+          },
+          {
+            "label": "Authentication",
+            "value": "X-Api-Key: <your-api-key>"
+          },
+          {
+            "label": "Request format",
+            "value": "application/json"
+          }
+        ],
+        "operations": [
+          {
+            "name": "Extract",
+            "method": "POST",
+            "path": "/v1/extract",
+            "input": "A URL, output formats and optional browser rendering.",
+            "output": "Markdown or HTML with metadata; a job ID in async mode.",
+            "docs": "https://docs.geonode.com/docs/scraper-api/v1/extraction/extract-content"
+          },
+          {
+            "name": "Batch",
+            "method": "POST",
+            "path": "/v1/batch",
+            "input": "A list of URLs and extraction options.",
+            "output": "A job ID and accepted URL count. Retrieve results when complete.",
+            "docs": "https://docs.geonode.com/docs/scraper-api/v1/batch/start-batch-job"
+          },
+          {
+            "name": "Crawl",
+            "method": "POST",
+            "path": "/v1/crawl",
+            "input": "A seed URL, maximum depth and page limit.",
+            "output": "A job ID. Retrieve extracted pages as the crawl completes.",
+            "docs": "https://docs.geonode.com/docs/scraper-api/v1/crawl/start-crawl-job"
+          },
+          {
+            "name": "Map",
+            "method": "POST",
+            "path": "/v1/map",
+            "input": "A base URL and optional discovery filters.",
+            "output": "Discovered URLs and their sources, without page content.",
+            "docs": "https://docs.geonode.com/docs/scraper-api/v1/map/map-urls"
+          },
+          {
+            "name": "Search",
+            "method": "POST",
+            "path": "/v1/search",
+            "input": "A query, with optional locale, page and search filters.",
+            "output": "Search results, suggestions and a search job ID.",
+            "docs": "https://docs.geonode.com/docs/scraper-api/v1/search/start-search-job"
+          }
+        ],
+        "behavior": [
+          {
+            "title": "Synchronous requests and background jobs",
+            "description": "Extraction supports sync and async modes. Batch and crawl return a job ID; poll for completion and paginate results. Webhooks can notify your service when a job finishes.",
+            "docs": "https://docs.geonode.com/docs/scraper-api/guides/jobs/02_checking_job_status",
+            "link_label": "Job lifecycle"
+          },
+          {
+            "title": "Rendering and usage",
+            "description": "Enable render_js when the page requires a browser. Rendering is slower and uses more credits. Keep API keys on your server; usage is charged to your Geonode account.",
+            "docs": "https://docs.geonode.com/docs/scraper-api/v1/extraction/extract-content",
+            "link_label": "Extraction options"
+          },
+          {
+            "title": "Errors and retries",
+            "description": "Handle authentication, validation and balance errors explicitly. Respect Retry-After on rate limits. A timed-out submission may still have created a job; avoid blindly submitting it again.",
+            "docs": "https://docs.geonode.com/docs/scraper-api/troubleshooting/error-handling",
+            "link_label": "Error handling"
+          }
+        ]
+      },
+      "description": "Send JSON requests from your backend. Get Markdown, HTML or URLs back directly, or retrieve results from a background job.",
+      "lifecycle": "published",
+      "platform_verification": "not-applicable",
+      "platform": "HTTP",
+      "version": null,
+      "runtime": "HTTPS client",
+      "last_verified": "2026-10-22",
+      "verification": {
+        "package": "not-applicable",
+        "connection": "not-tested",
+        "note": "Official API documentation is available. Authenticated requests have not been run in this review. Capability copy checked against the official API reference and the developer-docs OpenAPI contract on 2026-10-22; this was a documentation review, not an authenticated execution test. Endpoint inputs, outputs and modes reviewed against the developer-docs OpenAPI contract on 2026-10-22.",
+        "evidence": [
+          "https://docs.geonode.com/docs/scraper-api/v1/reference"
+        ]
+      },
+      "capabilities": {
+        "confirmed": [
+          "Extract webpage content as Markdown or HTML.",
+          "Process multiple URLs together with batch extraction.",
+          "Crawl a website and retrieve the resulting pages.",
+          "Discover website URLs before choosing what to extract.",
+          "Search the web for pages relevant to your query.",
+          "Track background jobs and receive completion notifications through webhooks."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key"
+        ],
+        "oauth_status": "not-supported",
+        "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+      },
+      "installation": {
+        "command": null,
+        "status": "documented",
+        "note": "Use the official setup documentation."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/api",
+        "docs": "https://docs.geonode.com/docs/scraper-api/v1/reference",
+        "source": null,
+        "package": null,
+        "changelog": null,
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Build with your own stack",
+          "description": "Use standard HTTP requests from a language or platform of your choice."
+        },
+        {
+          "title": "Connect a custom service",
+          "description": "Integrate asynchronous extraction and completion webhooks into your service."
+        }
+      ],
+      "prerequisites": [
+        "HTTPS client",
+        "A Geonode API key and an active plan for authenticated requests."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "python",
+        "typescript",
+        "cli"
+      ],
+      "logo": null,
+      "guide": {
+        "intro": "Call the Geonode Scraper API directly from any HTTP client. Use this route when your language has no dedicated SDK or you want to control the request and response handling yourself.",
+        "sections": [
+          {
+            "title": "Make one synchronous request",
+            "paragraphs": [
+              "Provide your API key through GEONODE_SCRAPER_API_KEY in the environment. Send JSON to the extraction endpoint with the X-Api-Key header."
+            ],
+            "code": {
+              "label": "CURL · EXTRACT MARKDOWN",
+              "value": "curl --request POST \"https://scraper.geonode.io/v1/extract\" \\\n  --header \"Content-Type: application/json\" \\\n  --header \"X-Api-Key: ${GEONODE_SCRAPER_API_KEY}\" \\\n  --data '{\"url\":\"https://example.com\",\"formats\":[\"markdown\"],\"processing_mode\":\"sync\"}'"
+            },
+            "expected": "A successful synchronous extraction returns page content under data.markdown and usage under tokens_charged. Read the HTTP status and error body before treating a response as a result."
+          },
+          {
+            "title": "Design for jobs and usage limits",
+            "steps": [
+              "Use asynchronous extraction, batches or crawls for longer work. Save the returned job ID and follow its status to completion, failure or cancellation.",
+              "Set explicit page and depth limits on crawls and paginate result sets.",
+              "Handle rate limits using Retry-After. Avoid resubmitting a job blindly if the original request timed out after submission.",
+              "If you use webhooks, validate signatures and handle duplicate deliveries before updating downstream records."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "mcp",
+      "slug": "mcp",
+      "name": "Geonode MCP Server",
+      "category": "ai-agents",
+      "summary": "Web search and content collection for MCP-compatible agents.",
+      "seo_title": "Geonode MCP Server — Web Scraping for AI Assistants",
+      "description": "Give MCP-compatible AI assistants web search and content collection tools. Extract pages, discover URLs, crawl sites and run batches for research and downstream analysis. Geonode offers limited keyless page extraction; an API key enables the full toolset, including JavaScript rendering and country targeting.",
+      "lifecycle": "published",
+      "platform_verification": "not-applicable",
+      "platform": "Streamable HTTP",
+      "version": "1.0.0",
+      "runtime": "Compatible remote MCP client",
+      "last_verified": "2026-10-22",
+      "verification": {
+        "package": "not-applicable",
+        "connection": "not-tested",
+        "note": "Remote health, handshake, anonymous tool discovery and a direct anonymous extraction of https://example.com verified on 2026-10-21 through an installed Python helper. Native client tool exposure, automatic selection and authenticated execution remain untested. Capability copy checked against the official MCP overview on 2026-10-22; no new connection or extraction test was run.",
+        "evidence": [
+          "https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview",
+          "https://registry.modelcontextprotocol.io/v0.1/servers/io.geonode%2Fscraper/versions/latest",
+          "https://scraper.geonode.io/mcp"
+        ]
+      },
+      "capabilities": {
+        "confirmed": [
+          "Extract webpage content from a compatible AI assistant or coding tool.",
+          "Try basic synchronous page extraction without an API key, within anonymous limits.",
+          "Use an API key for URL discovery, crawls, web search and batch jobs.",
+          "Access JavaScript rendering and country targeting with authenticated requests.",
+          "Monitor long-running extraction and crawl jobs from your MCP client."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key",
+          "anonymous-extract"
+        ],
+        "oauth_status": "planned",
+        "note": "API key recommended for the full toolset. Keyless synchronous extraction is also documented: 5 requests/minute, 1 concurrent request and 100 MB/day; no JavaScript rendering or country targeting."
+      },
+      "installation": {
+        "command": null,
+        "status": "documented",
+        "note": "Use the official setup documentation."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/mcp",
+        "docs": "https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview",
+        "source": "https://github.com/geonodecom/mcp",
+        "source_visibility": "private",
+        "package": null,
+        "changelog": null,
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Turn a page into context",
+          "description": "Extract a page as Markdown for your assistant to read."
+        },
+        {
+          "title": "Research from your editor",
+          "description": "Let your assistant find and work with web data without switching tools."
+        }
+      ],
+      "prerequisites": [
+        "A client supporting remote Streamable HTTP MCP.",
+        "A Geonode API key for tools beyond anonymous page extraction."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "python",
+        "skills",
+        "langchain"
+      ],
+      "logo": "assets/mcp.svg",
+      "guide": {
+        "intro": "Connect a compatible AI assistant to Geonode over remote Streamable HTTP. The assistant discovers tools through MCP and calls them on your behalf; you do not need to install a Python SDK for this hosted connection.",
+        "sections": [
+          {
+            "title": "Check the connection with one page",
+            "steps": [
+              "Add https://scraper.geonode.io/mcp as a remote HTTP MCP server in your client, using the client-specific Geonode guide.",
+              "Refresh the client's tools. Without an API key, the server exposes the extract tool.",
+              "Ask: “Use Geonode to extract https://example.com as Markdown, then summarize what the page says.”",
+              "Inspect the tool result in your client. A successful connection check alone does not confirm that a page was extracted."
+            ]
+          },
+          {
+            "title": "Move from keyless evaluation to your account",
+            "paragraphs": [
+              "Anonymous extraction is synchronous, with documented limits of five requests per minute, one concurrent request and 100 MB per day. JavaScript rendering and country targeting require authentication.",
+              "For account-backed access, configure X-Api-Key through your client's secure header or credential setting. Your plan's usage limits then apply. The client-specific guides describe where to configure the header."
+            ],
+            "links": [
+              {
+                "label": "Geonode keyless MCP guide",
+                "url": "https://docs.geonode.com/docs/scraper-api/guides/mcp/01_use-without-an-api-key"
+              },
+              {
+                "label": "Geonode MCP prerequisites",
+                "url": "https://docs.geonode.com/docs/scraper-api/guides/mcp/01_before-you-start"
+              }
+            ]
+          },
+          {
+            "title": "Hosted service and local adapters",
+            "paragraphs": [
+              "The verified connection is the hosted remote endpoint. A local launcher or supported self-hosted adapter is a separate future delivery; the hosted API and scraping infrastructure are not included in an SDK installation."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "cli",
+      "slug": "cli",
+      "name": "CLI",
+      "category": "cli",
+      "summary": "Search, crawl and extract web data from your terminal.",
+      "seo_title": "Geonode CLI — Web Scraping, Crawling & Search",
+      "description": "Collect web data from your terminal for scripts, agents and data pipelines. Extract pages, crawl sites, discover URLs, search the web and run batches with the Geonode CLI. JSON output and exit codes make the results easy to use in your own automation.",
+      "lifecycle": "published",
+      "platform_verification": "not-applicable",
+      "platform": "Terminal",
+      "version": "0.2.2",
+      "runtime": "Python 3.10+",
+      "last_verified": "2026-10-21",
+      "verification": {
+        "package": "verified",
+        "connection": "not-tested",
+        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "evidence": [
+          "https://pypi.org/pypi/geonode-scraper-cli/json"
+        ]
+      },
+      "capabilities": {
+        "confirmed": [
+          "Extract Markdown or HTML with gscraper extract.",
+          "Run batch, crawl, map and search commands from scripts.",
+          "Return JSON envelopes and exit codes for automation."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key"
+        ],
+        "oauth_status": "not-supported",
+        "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+      },
+      "installation": {
+        "command": "pipx install geonode-scraper-cli==0.2.2",
+        "status": "package-verified",
+        "note": "Uses the existing published package name. No package rename is required."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/cli",
+        "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/cli",
+        "source": "https://github.com/geonodecom/cli",
+        "source_visibility": "private",
+        "package": "https://pypi.org/project/geonode-scraper-cli/",
+        "changelog": "https://pypi.org/project/geonode-scraper-cli/",
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Schedule a content refresh",
+          "description": "Run extraction commands from your scheduler, inspect exit codes, and save JSON results."
+        },
+        {
+          "title": "Inspect a site from the terminal",
+          "description": "Map URLs, select pages and extract Markdown without writing an API client."
+        }
+      ],
+      "prerequisites": [
+        "Python 3.10+",
+        "A Geonode API key and an active plan for authenticated requests."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "python",
+        "api",
+        "mcp"
+      ],
+      "logo": null,
+      "guide": {
+        "intro": "gscraper is the Geonode command-line interface. Use it for one-off extraction, shell scripts, batches and crawls without writing an application.",
+        "sections": [
+          {
+            "title": "Check the installation and extract a page",
+            "paragraphs": [
+              "Set GEONODE_SCRAPER_API_KEY through your environment or the CLI config file. Run the commands below after installation. Avoid putting a real key into command-line flags or committed files."
+            ],
+            "code": {
+              "label": "TERMINAL",
+              "value": "gscraper --help\ngscraper extract https://example.com --format markdown"
+            },
+            "expected": "The help command lists the available commands. A successful extraction prints a readable result; use --json when a script needs the structured response."
+          },
+          {
+            "title": "Use the result in a script",
+            "code": {
+              "label": "TERMINAL · JSON OUTPUT",
+              "value": "gscraper extract https://example.com --format markdown --json"
+            },
+            "paragraphs": [
+              "Read ok before consuming result.data.markdown. Failures include an error object with status, code, message and retryable. The CLI also provides exit codes so scripts can detect failure without parsing a human-readable message."
+            ]
+          },
+          {
+            "title": "Run larger jobs",
+            "code": {
+              "label": "TERMINAL · EXAMPLES",
+              "value": "gscraper map run https://example.com --search pricing\ngscraper batch create https://example.com https://example.org --format markdown\ngscraper batch wait JOB_ID\ngscraper usage concurrency"
+            },
+            "paragraphs": [
+              "Replace JOB_ID with the ID returned by the batch command. Use per-command --help to inspect timeout and polling options before putting a command into a scheduled workflow."
+            ]
+          },
+          {
+            "title": "Resolve configuration problems",
+            "paragraphs": [
+              "Flags override environment variables, which override the config file. Use gscraper config path to locate the TOML file and gscraper config show to inspect settings with keys masked. If the command is missing on Windows, check the Python Scripts directory on PATH or install through pipx."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "python",
+      "slug": "sdk-python",
+      "name": "Python SDK",
+      "category": "sdks",
+      "summary": "Typed Python clients for web research and data pipelines.",
+      "seo_title": "Geonode Python SDK — Web Scraping & Data Extraction",
+      "description": "Build Python agents and data pipelines with Geonode’s typed clients. Extract pages, crawl sites, discover URLs, search the web and run batches. Use returned content in your own research and RAG workflows, with webhook subscriptions and usage statistics available from your code.",
+      "lifecycle": "published",
+      "platform_verification": "not-applicable",
+      "platform": "Python",
+      "version": "0.6.1",
+      "runtime": "Python 3.10+",
+      "last_verified": "2026-10-21",
+      "verification": {
+        "package": "verified",
+        "connection": "not-tested",
+        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "evidence": [
+          "https://pypi.org/pypi/geonode-scraper-sdk/json"
+        ]
+      },
+      "capabilities": {
+        "confirmed": [
+          "Extract page content as Markdown or HTML, with optional JavaScript rendering.",
+          "Run batch extraction and bounded website crawls as background jobs.",
+          "Discover website URLs before choosing which pages to extract.",
+          "Search the web, receive job notifications through webhooks and inspect API usage."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key"
+        ],
+        "oauth_status": "not-supported",
+        "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+      },
+      "installation": {
+        "command": "pip install geonode-scraper-sdk==0.6.1",
+        "status": "package-verified",
+        "note": "Uses the existing published package name. No package rename is required."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/sdk-python",
+        "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/python",
+        "source": "https://github.com/geonodecom/sdk-python",
+        "source_visibility": "private",
+        "package": "https://pypi.org/project/geonode-scraper-sdk/",
+        "changelog": "https://pypi.org/project/geonode-scraper-sdk/",
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Prepare documents for retrieval",
+          "description": "Extract Markdown from selected URLs, then pass it to your own chunking, embedding and storage pipeline."
+        },
+        {
+          "title": "Refresh a website dataset",
+          "description": "Crawl with depth and page limits, inspect results, and save content with its source URL."
+        }
+      ],
+      "prerequisites": [
+        "Python 3.10+",
+        "A Geonode API key and an active plan for authenticated requests."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "typescript",
+        "cli",
+        "langchain"
+      ],
+      "logo": "assets/python.svg",
+      "guide": {
+        "intro": "Use the Python SDK when your application needs typed requests and responses for the Geonode Scraper API. The client sends your API key and uses the production endpoint by default.",
+        "sections": [
+          {
+            "title": "Extract your first page",
+            "paragraphs": [
+              "Set GEONODE_SCRAPER_API_KEY in the environment, then run this script with Python 3.10 or newer. The context manager closes the API client when the request finishes."
+            ],
+            "code": {
+              "label": "PYTHON · SYNCHRONOUS EXTRACTION",
+              "value": "import os\nfrom geonode_scraper_sdk import (\n    Configuration, ApiClient, ExtractionApi, ExtractRequest, OutputFormat,\n)\n\nconfiguration = Configuration(\n    api_key={\"ApiKeyAuth\": os.environ[\"GEONODE_SCRAPER_API_KEY\"]}\n)\nwith ApiClient(configuration) as api_client:\n    response = ExtractionApi(api_client).extract_v1_extract_post(\n        ExtractRequest(\n            url=\"https://example.com\",\n            formats=[OutputFormat.MARKDOWN],\n        )\n    )\n    print(response.data.markdown)\n    print(response.tokens_charged)"
+            },
+            "expected": "A successful response contains the page in data.markdown and the request cost in tokens_charged. The example waits for the extraction to finish."
+          },
+          {
+            "title": "Expand the workflow",
+            "steps": [
+              "Use BatchApi to extract a list of URLs or CrawlApi to follow links from a seed page with depth and page limits.",
+              "Use MapApi to discover URLs before extracting them, or SearchApi to find candidate pages.",
+              "Use background processing for longer jobs. Store the returned job_id, poll its status with a bounded timeout, and handle completed, failed and cancelled states.",
+              "Read paginated results page by page. A single status response may contain only part of a batch or crawl."
+            ]
+          },
+          {
+            "title": "When a request fails",
+            "paragraphs": [
+              "Check authentication for HTTP 401 and plan balance for 402. Respect Retry-After on 429. Inspect the error body for validation or extraction failures before retrying. A network timeout after submitting a job does not prove that the job was never created."
+            ],
+            "links": [
+              {
+                "label": "Geonode API error handling",
+                "url": "https://docs.geonode.com/docs/scraper-api/troubleshooting/error-handling"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "typescript",
+      "slug": "sdk-typescript",
+      "name": "TypeScript SDK",
+      "category": "sdks",
+      "summary": "Typed web data access for JavaScript and TypeScript agents.",
+      "seo_title": "Geonode TypeScript SDK — Web Scraping & Data Extraction",
+      "description": "Build server-side JavaScript and TypeScript agents with Geonode’s typed clients. Extract pages, crawl sites, discover URLs, search the web and run batches. Feed results into your AI features and data workflows, with webhook subscriptions and usage statistics available from your code.",
+      "lifecycle": "published",
+      "platform_verification": "not-applicable",
+      "platform": "TypeScript",
+      "version": "0.6.1",
+      "runtime": "Node.js 18+",
+      "last_verified": "2026-10-21",
+      "verification": {
+        "package": "verified",
+        "connection": "not-tested",
+        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "evidence": [
+          "https://registry.npmjs.org/@geonode_scraper%2fscraper-sdk"
+        ]
+      },
+      "capabilities": {
+        "confirmed": [
+          "Extract page content as Markdown or HTML, with optional JavaScript rendering.",
+          "Run batch extraction and bounded website crawls as background jobs.",
+          "Discover website URLs before choosing which pages to extract.",
+          "Search the web, receive job notifications through webhooks and inspect API usage."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key"
+        ],
+        "oauth_status": "not-supported",
+        "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+      },
+      "installation": {
+        "command": "npm install @geonode_scraper/scraper-sdk@0.6.1",
+        "status": "package-verified",
+        "note": "Uses the existing published package name. No package rename is required."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/sdk-typescript",
+        "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/typescript",
+        "source": "https://github.com/geonodecom/sdk-typescript",
+        "source_visibility": "private",
+        "package": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
+        "changelog": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Add website import to your app",
+          "description": "Accept a URL on your server, extract its content, and return the result to your application."
+        },
+        {
+          "title": "Refresh background data",
+          "description": "Submit a batch or crawl, retain the job ID, and process results after completion."
+        }
+      ],
+      "prerequisites": [
+        "Node.js 18+",
+        "A Geonode API key and an active plan for authenticated requests."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "python",
+        "api",
+        "n8n"
+      ],
+      "logo": "assets/typescript.svg",
+      "guide": {
+        "intro": "Build server-side JavaScript or TypeScript workflows with the Geonode Scraper API. The SDK uses Node's built-in fetch and provides typed API clients and request models.",
+        "sections": [
+          {
+            "title": "Extract your first page",
+            "paragraphs": [
+              "Set GEONODE_SCRAPER_API_KEY in your server environment. This ES module example uses top-level await: run it as an .mjs file, or use a TypeScript runtime configured for ES modules. Keep the key in server code."
+            ],
+            "code": {
+              "label": "JAVASCRIPT / TYPESCRIPT · ES MODULE",
+              "value": "import {\n  Configuration, ExtractionApi, OutputFormat,\n} from \"@geonode_scraper/scraper-sdk\";\n\nconst apiKey = process.env.GEONODE_SCRAPER_API_KEY;\nif (!apiKey) throw new Error(\"Set GEONODE_SCRAPER_API_KEY\");\n\nconst configuration = new Configuration({ apiKey });\nconst response = await new ExtractionApi(configuration).extractV1ExtractPost({\n  extractRequest: {\n    url: \"https://example.com\",\n    formats: [OutputFormat.Markdown],\n  },\n});\n\nif (\"data\" in response) {\n  console.log(response.data.markdown);\n  console.log(response.tokensCharged);\n}"
+            },
+            "expected": "On success, data.markdown contains the extracted page and tokensCharged reports the request cost. The data check narrows the response type; background requests return a job instead."
+          },
+          {
+            "title": "Move from one page to a workflow",
+            "steps": [
+              "BatchApi submits a list of URLs; CrawlApi follows links within your depth and page limits.",
+              "MapApi discovers a site's URLs, and SearchApi returns ranked search results.",
+              "For background work, save jobId and inspect the terminal job status. Bound polling by a deadline and handle failures or cancellation.",
+              "Use page and pageSize to retrieve all pages of batch or crawl results."
+            ]
+          },
+          {
+            "title": "Keep API access on your server",
+            "paragraphs": [
+              "Use the full scoped package name in imports. The SDK can run in a browser, but embedding your Geonode API key there exposes it to visitors. Call it from a backend route, worker or other server process, then return only the data your frontend needs."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "langchain",
+      "slug": "integration-langchain",
+      "name": "LangChain",
+      "category": "frameworks",
+      "summary": "Web research and content collection for LangChain agents.",
+      "seo_title": "Geonode for LangChain — Web Scraping Tools for AI Agents",
+      "description": "Give your LangChain agents web search and page content for research and retrieval workflows. Extract pages, crawl sites, discover URLs and run batches. Use the returned content in your own research and RAG pipelines, with tools to retrieve or wait for background jobs.",
+      "lifecycle": "published",
+      "platform_verification": "not-applicable",
+      "platform": "LangChain",
+      "version": "0.4.2",
+      "runtime": "Python 3.10+",
+      "last_verified": "2026-10-21",
+      "verification": {
+        "package": "verified",
+        "connection": "not-tested",
+        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "evidence": [
+          "https://pypi.org/pypi/geonode-scraper-langchain/json"
+        ]
+      },
+      "capabilities": {
+        "confirmed": [
+          "Connect native tools to your LangChain agents to search for and collect source content.",
+          "Extract page content as Markdown or HTML, with optional JavaScript rendering.",
+          "Run batch extraction and bounded website crawls as background jobs.",
+          "Discover website URLs before choosing which pages to extract.",
+          "Search the web and retrieve or wait for background job results."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key"
+        ],
+        "oauth_status": "not-supported",
+        "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+      },
+      "installation": {
+        "command": "pip install geonode-scraper-langchain==0.4.2",
+        "status": "package-verified",
+        "note": "Uses the existing published package name. No package rename is required."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/integration-langchain",
+        "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/langchain",
+        "source": "https://github.com/geonodecom/integration-langchain",
+        "source_visibility": "private",
+        "package": "https://pypi.org/project/geonode-scraper-langchain/",
+        "changelog": "https://pypi.org/project/geonode-scraper-langchain/",
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Research with source material",
+          "description": "Let an agent search for relevant pages and extract their content before composing an answer with source URLs."
+        },
+        {
+          "title": "Prepare a retrieval corpus",
+          "description": "Map a site, select relevant URLs and extract Markdown for your own indexing pipeline."
+        }
+      ],
+      "prerequisites": [
+        "Python 3.10+",
+        "A Geonode API key and an active plan for authenticated requests."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "crewai",
+        "agent-tools",
+        "mcp"
+      ],
+      "logo": "assets/langchain.svg",
+      "guide": {
+        "intro": "Add Geonode web extraction to LangChain through native tools. Start with a direct tool call to check your API connection, then pass the same tools to your agent.",
+        "sections": [
+          {
+            "title": "Make your first tool call",
+            "paragraphs": [
+              "Set GEONODE_SCRAPER_API_KEY in your environment using the key from your Geonode dashboard. This example selects only extraction, URL mapping and search. It calls extraction directly, so no language model or model-provider key is needed for this first check."
+            ],
+            "code": {
+              "label": "PYTHON · FIRST REQUEST",
+              "value": "import os\n\nfrom geonode_scraper_langchain import build_langchain_tools\nfrom geonode_scraper_tools_core import ScraperToolSettings\n\nsettings = ScraperToolSettings(\n    host=\"https://scraper.geonode.io\",\n    api_key=os.environ[\"GEONODE_SCRAPER_API_KEY\"],\n    request_timeout=30.0,\n)\ntools = build_langchain_tools(\n    settings=settings,\n    operations=[\"extract\", \"map_urls\", \"search\"],\n)\nextract = next(t for t in tools if t.name == \"scraper_extract_content\")\noutcome = extract.invoke({\"url\": \"https://example.com\", \"formats\": [\"markdown\"]})\n\nif outcome[\"ok\"]:\n    print(outcome[\"result\"][\"data\"][\"markdown\"])\nelse:\n    print(outcome[\"error\"][\"status\"], outcome[\"error\"][\"message\"])"
+            },
+            "expected": "On a successful synchronous request, the script prints the extracted page as Markdown. A failed API request produces an error envelope instead. This is an example to run with your own key; it does not represent a recorded extraction result."
+          },
+          {
+            "title": "Connect the tools to your LangChain agent",
+            "paragraphs": [
+              "Pass tools=tools to LangChain's create_agent alongside your configured chat model. The integration installs langchain-core; an agent application also needs langchain and the package for its chosen model provider.",
+              "Give the agent a specific URL and outcome, such as: “Read https://example.com and explain what the page is for, using the extracted content.” Review the tool result before expanding the workflow."
+            ]
+          },
+          {
+            "title": "Choose the operations your workflow needs",
+            "paragraphs": [
+              "The package exposes 21 documented operations. Selecting a smaller set reduces the number of tools your agent must choose between."
+            ],
+            "steps": [
+              "Extract a single page as Markdown or HTML, synchronously or as a background job.",
+              "Submit batches and crawls, inspect progress, and wait for completion.",
+              "Map a site's URLs, search the web, and inspect usage and concurrency."
+            ]
+          },
+          {
+            "title": "Handle failures and long-running jobs",
+            "paragraphs": [
+              "Check ok before reading result. On failure, error contains the HTTP status, code, message and retryable flag. A retryable failure may benefit from another attempt; an invalid key or request needs to be corrected first.",
+              "Set request_timeout for each HTTP response. Retries are disabled by default (max_retries=0). Wait tools poll every 3 seconds with a 60-second polling timeout by default; these settings are separate from the HTTP request timeout."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "crewai",
+      "slug": "integration-crewai",
+      "name": "CrewAI",
+      "category": "frameworks",
+      "summary": "Search, crawl and extract web data for CrewAI agents.",
+      "seo_title": "Geonode for CrewAI — Web Scraping Tools for AI Agents",
+      "description": "Give your CrewAI researchers tools to find and collect source material from the web. Search the web, discover URLs, extract pages, crawl sites and run batches. Feed the returned content into your crew’s analysis and reporting tasks, with tools to retrieve or wait for background jobs.",
+      "lifecycle": "published",
+      "platform_verification": "not-applicable",
+      "platform": "CrewAI",
+      "version": "0.4.2",
+      "runtime": "Python 3.10–3.13",
+      "last_verified": "2026-10-21",
+      "verification": {
+        "package": "verified",
+        "connection": "not-tested",
+        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "evidence": [
+          "https://pypi.org/pypi/geonode-scraper-crewai/json"
+        ]
+      },
+      "capabilities": {
+        "confirmed": [
+          "Connect native tools to your CrewAI agents to collect source content for research tasks.",
+          "Extract page content as Markdown or HTML, with optional JavaScript rendering.",
+          "Run batch extraction and bounded website crawls as background jobs.",
+          "Discover website URLs before choosing which pages to extract.",
+          "Search the web and retrieve or wait for background job results."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key"
+        ],
+        "oauth_status": "not-supported",
+        "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+      },
+      "installation": {
+        "command": "pip install geonode-scraper-crewai==0.4.2",
+        "status": "package-verified",
+        "note": "Uses the existing published package name. No package rename is required."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/integration-crewai",
+        "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/crewai",
+        "source": "https://github.com/geonodecom/integration-crewai",
+        "source_visibility": "private",
+        "package": "https://pypi.org/project/geonode-scraper-crewai/",
+        "changelog": "https://pypi.org/project/geonode-scraper-crewai/",
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Support a research crew",
+          "description": "Give a researcher tools to find and extract sources, then pass those results to a separate analysis task."
+        },
+        {
+          "title": "Refresh knowledge inputs",
+          "description": "Collect selected website pages as Markdown before your crew analyzes or summarizes them."
+        }
+      ],
+      "prerequisites": [
+        "Python 3.10–3.13",
+        "A Geonode API key and an active plan for authenticated requests."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "langchain",
+        "agent-tools",
+        "python"
+      ],
+      "logo": "assets/crewai.svg",
+      "guide": {
+        "intro": "Add Geonode web extraction to CrewAI through native tools. Start with a direct tool call to check your API connection, then pass the same tools to your agent.",
+        "sections": [
+          {
+            "title": "Make your first tool call",
+            "paragraphs": [
+              "Set GEONODE_SCRAPER_API_KEY in your environment using the key from your Geonode dashboard. This example selects only extraction, URL mapping and search. It calls extraction directly, so no language model or model-provider key is needed for this first check."
+            ],
+            "code": {
+              "label": "PYTHON · FIRST REQUEST",
+              "value": "import os\n\nfrom geonode_scraper_crewai import build_crewai_tools\nfrom geonode_scraper_tools_core import ScraperToolSettings\n\nsettings = ScraperToolSettings(\n    host=\"https://scraper.geonode.io\",\n    api_key=os.environ[\"GEONODE_SCRAPER_API_KEY\"],\n    request_timeout=30.0,\n)\ntools = build_crewai_tools(\n    settings=settings,\n    operations=[\"extract\", \"map_urls\", \"search\"],\n)\nextract = next(t for t in tools if t.name == \"scraper_extract_content\")\noutcome = extract.run(url=\"https://example.com\", formats=[\"markdown\"])\n\nif outcome[\"ok\"]:\n    print(outcome[\"result\"][\"data\"][\"markdown\"])\nelse:\n    print(outcome[\"error\"][\"status\"], outcome[\"error\"][\"message\"])"
+            },
+            "expected": "On a successful synchronous request, the script prints the extracted page as Markdown. A failed API request produces an error envelope instead. This is an example to run with your own key; it does not represent a recorded extraction result."
+          },
+          {
+            "title": "Connect the tools to your CrewAI agent",
+            "paragraphs": [
+              "Pass tools=tools to your CrewAI Agent, associate the agent with a Task, and run that task through a Crew. Configure a model supported by CrewAI and its provider credential separately from your Geonode API key. Some providers require an additional CrewAI extra.",
+              "Give the agent a specific URL and outcome, such as: “Read https://example.com and explain what the page is for, using the extracted content.” Review the tool result before expanding the workflow."
+            ]
+          },
+          {
+            "title": "Choose the operations your workflow needs",
+            "paragraphs": [
+              "The package exposes 21 documented operations. Selecting a smaller set reduces the number of tools your agent must choose between."
+            ],
+            "steps": [
+              "Extract a single page as Markdown or HTML, synchronously or as a background job.",
+              "Submit batches and crawls, inspect progress, and wait for completion.",
+              "Map a site's URLs, search the web, and inspect usage and concurrency."
+            ]
+          },
+          {
+            "title": "Handle failures and long-running jobs",
+            "paragraphs": [
+              "Check ok before reading result. On failure, error contains the HTTP status, code, message and retryable flag. A retryable failure may benefit from another attempt; an invalid key or request needs to be corrected first.",
+              "Set request_timeout for each HTTP response. Retries are disabled by default (max_retries=0). Wait tools poll every 3 seconds with a 60-second polling timeout by default; these settings are separate from the HTTP request timeout."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "n8n",
+      "slug": "integration-n8n",
+      "name": "n8n",
+      "category": "automation",
+      "summary": "Web search and content collection for self-hosted n8n.",
+      "seo_title": "Geonode for n8n — Web Scraping & Workflow Automation",
+      "description": "Bring web data into self-hosted n8n agents and workflows with Geonode’s community node. Extract pages, crawl sites, discover URLs, search the web and run batches. Use extraction and crawl completion triggers to continue your own AI processing, research or record-update steps.",
+      "lifecycle": "published",
+      "platform_verification": "not-verified",
+      "platform": "Self-hosted n8n",
+      "version": "0.2.3",
+      "runtime": "Self-hosted n8n · Node.js 20.15+",
+      "last_verified": "2026-10-21",
+      "verification": {
+        "package": "verified",
+        "connection": "not-tested",
+        "note": "Package verified on npm. Self-hosted community node; not n8n-verified or available on n8n Cloud. Workflow execution has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "evidence": [
+          "https://registry.npmjs.org/n8n-nodes-scraperapi"
+        ]
+      },
+      "capabilities": {
+        "confirmed": [
+          "Extract page content as Markdown or HTML, with optional JavaScript rendering.",
+          "Run batch extraction and bounded website crawls as background jobs.",
+          "Discover website URLs before choosing which pages to extract.",
+          "Run web search jobs and inspect usage statistics.",
+          "Start follow-up workflows when extraction or crawling completes."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key"
+        ],
+        "oauth_status": "not-supported",
+        "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+      },
+      "installation": {
+        "command": null,
+        "status": "documented",
+        "note": "Uses the existing published package name. No package rename is required."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/integration-n8n",
+        "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/n8n",
+        "source": "https://github.com/geonodecom/integration-n8n",
+        "source_visibility": "private",
+        "package": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
+        "changelog": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Feed a knowledge base",
+          "description": "Extract source pages as Markdown, then connect your own chunking, embedding and storage nodes."
+        },
+        {
+          "title": "Refresh a website dataset",
+          "description": "Start a bounded crawl and process the returned content after the job completes."
+        },
+        {
+          "title": "React to completed extraction",
+          "description": "Use Scraper API Trigger to start follow-up processing for extraction or crawl completion."
+        }
+      ],
+      "prerequisites": [
+        "Self-hosted n8n · Node.js 20.15+",
+        "A Geonode API key and an active plan for authenticated requests."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "make",
+        "zapier",
+        "api"
+      ],
+      "logo": "assets/n8n.svg",
+      "guide": {
+        "intro": "Add extraction to a self-hosted n8n workflow with the Scraper API node, or start a workflow when an extraction or crawl finishes with Scraper API Trigger.",
+        "sections": [
+          {
+            "title": "Test the credentials before building the workflow",
+            "steps": [
+              "Open Credentials → Add credential and choose Scraper API.",
+              "Enter your Geonode API key. Keep Base URL set to https://scraper.geonode.io.",
+              "Select Test. The node calls GET /v1/statistics; a successful test confirms the key is accepted for that request."
+            ]
+          },
+          {
+            "title": "Extract your first page",
+            "steps": [
+              "Add a Scraper API node. Choose Resource: Extract and Operation: Run Extraction.",
+              "Set URL to https://example.com and Output Formats to Markdown.",
+              "Keep Processing Mode on Sync (Block Until Done), then select Execute step.",
+              "Use data.markdown in the next node. tokens_charged reports the extraction cost."
+            ],
+            "expected": "A successful node execution returns the extracted content. Connect that output to the next step in your workflow after checking it with a single URL."
+          },
+          {
+            "title": "Wait for a job or react to its completion",
+            "paragraphs": [
+              "For asynchronous extraction and batches, enable Wait for Completion where offered. For a crawl, start the crawl, then use Get Status with Wait for Completion enabled.",
+              "For event-driven workflows, use Scraper API Trigger with Extract Completed or Crawl Completed. Keep Verify Signature on. Activating the workflow registers its webhook URL; deactivating it removes that registration."
+            ]
+          },
+          {
+            "title": "Installation and retry limits",
+            "paragraphs": [
+              "This is a self-hosted community node, not an n8n-verified Cloud integration. Update it through Settings → Community Nodes.",
+              "The node retries HTTP 429 and 5xx responses with increasing pauses, up to five total attempts, and respects Retry-After. Other errors stop the node and display the API message."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "make",
+      "slug": "integration-make",
+      "name": "Make",
+      "category": "automation",
+      "summary": "Collect web content for Make.com agents and scenarios.",
+      "seo_title": "Geonode for Make.com — Web Scraping & Data Extraction",
+      "description": "Give your Make.com agents and scenarios web content for research and automation. Extract pages, crawl sites, discover URLs and run batches, then pass results to AI, spreadsheet or CRM modules for summaries and record updates.",
+      "lifecycle": "private",
+      "platform_verification": "not-verified",
+      "platform": "Make",
+      "version": null,
+      "runtime": "Private app access",
+      "last_verified": "2026-10-21",
+      "verification": {
+        "package": "not-applicable",
+        "connection": "not-tested",
+        "note": "Private app access is required. Module/action definitions and output schemas reviewed in source on 2026-10-21; deployed account access and live workflow execution were not tested. No public marketplace listing is verified.",
+        "evidence": []
+      },
+      "capabilities": {
+        "confirmed": [
+          "Extract page content as Markdown or HTML, with optional JavaScript rendering.",
+          "Run batch extraction and bounded website crawls as background jobs.",
+          "Discover website URLs before choosing which pages to extract.",
+          "Connect extraction, crawling, URL discovery and batch jobs in a scenario; inspect API usage when needed.",
+          "Map extracted content, source URL and usage fields into later scenario modules."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key"
+        ],
+        "oauth_status": "not-supported",
+        "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+      },
+      "installation": {
+        "command": null,
+        "status": "private",
+        "note": "Request private Make app access from Geonode. After accepting access for the supplied organization and zone, add the app to a scenario, create an API Key connection and test Extract a URL (Sync) with Markdown output."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/integration-make",
+        "docs": "https://docs.geonode.com/docs/scraper-api",
+        "source": "https://github.com/geonodecom/integration-make",
+        "source_visibility": "private",
+        "package": null,
+        "changelog": null,
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Send website content to a spreadsheet",
+          "description": "Read a URL from your scenario, extract Markdown, then map the source URL and content into a Google Sheets row using a separate Sheets module."
+        },
+        {
+          "title": "Prepare pages for an AI summary",
+          "description": "Extract a page as Markdown, pass it to your chosen AI module, and save its summary with the source URL."
+        },
+        {
+          "title": "Refresh a collection of pages",
+          "description": "Submit a URL list as a batch, retain its job ID, and retrieve results before updating downstream records."
+        }
+      ],
+      "prerequisites": [
+        "Private app access",
+        "A Geonode API key and an active plan for authenticated requests."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "n8n",
+        "zapier",
+        "api"
+      ],
+      "logo": "assets/make.svg",
+      "guide": {
+        "intro": "Use Geonode’s private Make.com app to turn website URLs into content for your scenario. Its source defines 15 modules for extraction, batches, crawls, URL discovery and usage. Request access before searching for it in Make.",
+        "sections": [
+          {
+            "title": "Set up your first Make scenario",
+            "steps": [
+              "Request private app access from Geonode for your Make organization and zone, then accept the supplied invitation. There is no public marketplace install link yet.",
+              "Create a Geonode API key in the dashboard. Add the invited app to a scenario and choose Extract a URL (Sync).",
+              "Create an API Key connection. It tests the key against authenticated usage statistics.",
+              "Enter https://example.com as URL and explicitly select Markdown in Output Formats; the module defaults to HTML.",
+              "Choose Run once. Inspect Extracted Data → Markdown (data.markdown), Metadata → URL (metadata.url) and tokens_charged.",
+              "Map the content and source URL into your destination module. Test the complete scenario before enabling its schedule."
+            ],
+            "expected": "A completed extraction returns page content. An accepted connection or a queued job alone does not confirm that the page was retrieved."
+          },
+          {
+            "title": "Example: website content to Google Sheets",
+            "paragraphs": [
+              "Pass a URL into Extract a URL (Sync), then add Google Sheets → Add a Row. Map metadata.url to a Source URL column, data.markdown to Content, and tokens_charged to Usage. The Sheets module requires its own connection.",
+              "For summaries, add a separate AI module that reads the Markdown. Product fields, comparisons and change alerts require your own parsing or comparison steps. This is a workflow recipe, not a live-tested blueprint."
+            ]
+          },
+          {
+            "title": "Choose the right module",
+            "paragraphs": [
+              "Extract a URL (Sync) returns content inline. Extract a URL (Async), Get an Extraction Job and List Extraction Jobs support background extraction. Extract a URL (Wait for Completion) combines submission and polling.",
+              "Crawl modules: Start a Crawl, Get Crawl Status, Cancel a Crawl and Start a Crawl (Wait for Completion). Batch modules: Start a Batch Extraction, Get Batch Status, Cancel a Batch and Start a Batch (Wait for Completion).",
+              "Map URLs from a Site emits one bundle per discovered link. Get Usage Statistics reads the connected account’s usage."
+            ]
+          },
+          {
+            "title": "Handle dynamic pages and longer jobs",
+            "paragraphs": [
+              "Where exposed, Render JavaScript and browser wait settings let the page settle before capture. Setting a wait option enables rendering. Proxy country and type are configurable where offered.",
+              "Keep the job ID and use separate start/status steps with bounded polling for longer work. Wait helpers hold an operation open; choose their interval and attempt limit deliberately. Do not resubmit an existing job because polling timed out."
+            ]
+          },
+          {
+            "title": "Make modules or MCP?",
+            "paragraphs": [
+              "This connector provides native Make scenario modules. Web search and webhook triggers are not defined in this Make source. Use the separate hosted MCP server when connecting a compatible AI assistant.",
+              "Module definitions were reviewed in source; deployed account access and a complete live Make scenario have not been verified in this review."
+            ],
+            "links": [
+              {
+                "label": "Geonode MCP setup",
+                "url": "https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": 1,
+      "id": "zapier",
+      "slug": "integration-zapier",
+      "name": "Zapier",
+      "category": "automation",
+      "summary": "Collect web content and continue your Zap when jobs finish.",
+      "seo_title": "Geonode for Zapier — Web Scraping & Data Extraction",
+      "description": "Bring web content into Zapier with Geonode’s app. Extract pages, discover URLs, crawl sites and run batches, then continue your Zap when a job completes. Pass results to your AI or business-app steps for research, summaries and record updates.",
+      "lifecycle": "private",
+      "platform_verification": "not-verified",
+      "platform": "Zapier",
+      "version": "1.0.2",
+      "runtime": "Private app access",
+      "last_verified": "2026-10-21",
+      "verification": {
+        "package": "not-applicable",
+        "connection": "not-tested",
+        "note": "Private app access is required. Module/action definitions and output schemas reviewed in source on 2026-10-21; deployed account access and live workflow execution were not tested. No public marketplace listing is verified.",
+        "evidence": []
+      },
+      "capabilities": {
+        "confirmed": [
+          "Extract page content as Markdown or HTML, with optional JavaScript rendering.",
+          "Run batch extraction and bounded website crawls as background jobs.",
+          "Discover website URLs before choosing which pages to extract.",
+          "Retrieve a job by its ID and continue your Zap when the job completes."
+        ],
+        "planned": []
+      },
+      "auth": {
+        "supported": [
+          "api-key"
+        ],
+        "oauth_status": "not-supported",
+        "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
+      },
+      "installation": {
+        "command": null,
+        "status": "private",
+        "note": "Request a private Zapier app invitation from Geonode. Accept it, connect with your Geonode API key, then test Extract URL with Markdown output before enabling the Zap."
+      },
+      "links": {
+        "website": "https://geonode.com/integrations/integration-zapier",
+        "docs": "https://docs.geonode.com/docs/scraper-api",
+        "source": "https://github.com/geonodecom/integration-zapier",
+        "source_visibility": "private",
+        "package": null,
+        "changelog": null,
+        "support": "https://geonode.com/contact"
+      },
+      "use_cases": [
+        {
+          "title": "Enrich incoming records",
+          "description": "Take a website URL from a form or CRM trigger, extract its content, and pass it to a later Zap step for processing."
+        },
+        {
+          "title": "Collect website content on a schedule",
+          "description": "Start a bounded crawl and use Job Completed to continue processing when the background work finishes."
+        },
+        {
+          "title": "Build an AI summary workflow",
+          "description": "Send extracted Markdown to a separate AI step and store its summary alongside the source URL."
+        }
+      ],
+      "prerequisites": [
+        "Private app access",
+        "A Geonode API key and an active plan for authenticated requests."
+      ],
+      "troubleshooting": [
+        {
+          "question": "My API key is not accepted.",
+          "answer": "Check the key in the Geonode dashboard and send it using X-Api-Key. Keep it out of browser bundles, URLs and version control."
+        },
+        {
+          "question": "The request is rate limited.",
+          "answer": "Respect the Retry-After response and your plan’s concurrency limits. Avoid automatically retrying a job submission when its outcome is unknown."
+        }
+      ],
+      "related": [
+        "n8n",
+        "make",
+        "api"
+      ],
+      "logo": "assets/zapier.svg",
+      "guide": {
+        "intro": "Connect web content to a Zap with Geonode’s private app: four actions, a job lookup and a completion trigger. Request a private invitation before configuring your first Zap.",
+        "sections": [
+          {
+            "title": "Extract your first page in Zapier",
+            "steps": [
+              "Request and accept the private app invitation in the Zapier account you will use.",
+              "Create a Geonode API key, then connect the app with that key and base URL https://scraper.geonode.io.",
+              "Choose Extract URL, enter https://example.com, use synchronous processing and select Markdown output.",
+              "Test the action and map Markdown (data__markdown) and URL (metadata__url) into your next step.",
+              "Test the complete Zap before enabling it. The connection test checks authentication; returned page content checks the extraction."
+            ]
+          },
+          {
+            "title": "Choose an action or trigger",
+            "paragraphs": [
+              "Extract URL retrieves a page. Batch Scrape URLs processes a list. Crawl Site follows links within depth and page limits. Map URLs discovers links under a site.",
+              "Find Job by ID retrieves background status/results. Job Completed is a REST-hook trigger for extraction, batch or crawl completion. Keep the submitted job ID and wait for a terminal result before consuming content."
+            ]
+          },
+          {
+            "title": "Example: a new record to a summary",
+            "paragraphs": [
+              "Use a form or spreadsheet trigger that provides a website URL, extract Markdown, then pass it to a separate AI step. Save the summary with its source URL in your destination app. Each downstream app requires its own connection.",
+              "Structured product fields and change detection need separate parsing and comparison steps. These are workflow ideas, not preconfigured or live-tested Zaps."
+            ]
+          },
+          {
+            "title": "Availability and connection choices",
+            "paragraphs": [
+              "There is no verified public marketplace installation link. Source definitions have been reviewed, but deployed account access and live Zap execution were not tested.",
+              "This app provides native Zapier actions. For a compatible AI assistant use Geonode’s separate MCP server; web search is not an action in this Zapier source."
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "proposed": [
+    {
+      "id": "go",
+      "slug": "go",
+      "name": "Go SDK",
+      "category": "sdks",
+      "lifecycle": "planned",
+      "platform": "Go",
+      "summary": "A native Go client for Geonode web data.",
+      "description": "A proposed Go SDK for teams building services and concurrent data pipelines. The goal is to make request construction, authentication and response handling feel at home in your existing application.",
+      "workflow": [
+        "Configure the client with a server-side Geonode API key.",
+        "Submit a URL from your Go application and choose the output your workflow needs.",
+        "Read the result, handle API errors and pass the content to your application's next step."
+      ],
+      "outcome": "A maintained Go package with typed request and response models, useful examples and a documented compatibility policy.",
+      "considerations": [
+        "Runtime support and package names have not been finalized.",
+        "API usage would remain subject to your Geonode plan; a language SDK would not include a separate scraping backend."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/go.svg"
+    },
+    {
+      "id": "java",
+      "slug": "java",
+      "name": "Java SDK",
+      "category": "sdks",
+      "lifecycle": "planned",
+      "platform": "Java",
+      "summary": "A native Java client for Geonode web data.",
+      "description": "A proposed Java SDK for teams adding web data to JVM services and scheduled jobs. The goal is to make request construction, authentication and response handling feel at home in your existing application.",
+      "workflow": [
+        "Configure the client with a server-side Geonode API key.",
+        "Submit a URL from your Java application and choose the output your workflow needs.",
+        "Read the result, handle API errors and pass the content to your application's next step."
+      ],
+      "outcome": "A maintained Java package with typed request and response models, useful examples and a documented compatibility policy.",
+      "considerations": [
+        "Runtime support and package names have not been finalized.",
+        "API usage would remain subject to your Geonode plan; a language SDK would not include a separate scraping backend."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/java.svg"
+    },
+    {
+      "id": "rust",
+      "slug": "rust",
+      "name": "Rust SDK",
+      "category": "sdks",
+      "lifecycle": "planned",
+      "platform": "Rust",
+      "summary": "A native Rust client for Geonode web data.",
+      "description": "A proposed Rust SDK for teams building typed services and command-line applications. The goal is to make request construction, authentication and response handling feel at home in your existing application.",
+      "workflow": [
+        "Configure the client with a server-side Geonode API key.",
+        "Submit a URL from your Rust application and choose the output your workflow needs.",
+        "Read the result, handle API errors and pass the content to your application's next step."
+      ],
+      "outcome": "A maintained Rust package with typed request and response models, useful examples and a documented compatibility policy.",
+      "considerations": [
+        "Runtime support and package names have not been finalized.",
+        "API usage would remain subject to your Geonode plan; a language SDK would not include a separate scraping backend."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/rust.svg"
+    },
+    {
+      "id": "ruby",
+      "slug": "ruby",
+      "name": "Ruby SDK",
+      "category": "sdks",
+      "lifecycle": "planned",
+      "platform": "Ruby",
+      "summary": "A native Ruby client for Geonode web data.",
+      "description": "A proposed Ruby SDK for teams working in Rails applications and background jobs. The goal is to make request construction, authentication and response handling feel at home in your existing application.",
+      "workflow": [
+        "Configure the client with a server-side Geonode API key.",
+        "Submit a URL from your Ruby application and choose the output your workflow needs.",
+        "Read the result, handle API errors and pass the content to your application's next step."
+      ],
+      "outcome": "A maintained Ruby package with typed request and response models, useful examples and a documented compatibility policy.",
+      "considerations": [
+        "Runtime support and package names have not been finalized.",
+        "API usage would remain subject to your Geonode plan; a language SDK would not include a separate scraping backend."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/ruby.svg"
+    },
+    {
+      "id": "php",
+      "slug": "php",
+      "name": "PHP SDK",
+      "category": "sdks",
+      "lifecycle": "planned",
+      "platform": "PHP",
+      "summary": "A native PHP client for Geonode web data.",
+      "description": "A proposed PHP SDK for teams working in PHP applications and scheduled content workflows. The goal is to make request construction, authentication and response handling feel at home in your existing application.",
+      "workflow": [
+        "Configure the client with a server-side Geonode API key.",
+        "Submit a URL from your PHP application and choose the output your workflow needs.",
+        "Read the result, handle API errors and pass the content to your application's next step."
+      ],
+      "outcome": "A maintained PHP package with typed request and response models, useful examples and a documented compatibility policy.",
+      "considerations": [
+        "Runtime support and package names have not been finalized.",
+        "API usage would remain subject to your Geonode plan; a language SDK would not include a separate scraping backend."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/php.svg"
+    },
+    {
+      "id": "dotnet",
+      "slug": "dotnet",
+      "name": ".NET SDK",
+      "category": "sdks",
+      "lifecycle": "planned",
+      "platform": ".NET",
+      "summary": "A native .NET client for Geonode web data.",
+      "description": "A proposed .NET SDK for teams using C# in web applications and background services. The goal is to make request construction, authentication and response handling feel at home in your existing application.",
+      "workflow": [
+        "Configure the client with a server-side Geonode API key.",
+        "Submit a URL from your .NET application and choose the output your workflow needs.",
+        "Read the result, handle API errors and pass the content to your application's next step."
+      ],
+      "outcome": "A maintained .NET package with typed request and response models, useful examples and a documented compatibility policy.",
+      "considerations": [
+        "Runtime support and package names have not been finalized.",
+        "API usage would remain subject to your Geonode plan; a language SDK would not include a separate scraping backend."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/dotnet.svg"
+    },
+    {
+      "id": "llamaindex",
+      "slug": "llamaindex",
+      "name": "LlamaIndex",
+      "category": "frameworks",
+      "lifecycle": "planned",
+      "platform": "LlamaIndex",
+      "summary": "Bring extracted web content into a retrieval pipeline.",
+      "description": "A proposed Geonode reader and tool integration for LlamaIndex. The focus is turning selected web pages into content your indexing workflow can inspect, chunk and store.",
+      "workflow": [
+        "Choose the pages your knowledge source should contain.",
+        "Extract their content through Geonode and retain source URLs alongside it.",
+        "Pass the resulting documents into your LlamaIndex indexing or retrieval workflow."
+      ],
+      "outcome": "A repeatable path from a web source to documents ready for indexing, with source attribution retained.",
+      "considerations": [
+        "The proposed adapter's API and supported framework versions are not finalized.",
+        "Model-provider access and Geonode API usage would be configured separately. Any retrieved web content should be treated as untrusted input."
+      ],
+      "current_path": {
+        "integration_id": "python",
+        "label": "Start with the Geonode Python SDK",
+        "url": "https://docs.geonode.com/docs/scraper-api/developer-guides/python-sdk"
+      },
+      "logo": "assets/llamaindex.svg"
+    },
+    {
+      "id": "openai-agents",
+      "slug": "openai-agents",
+      "name": "OpenAI Agents SDK",
+      "category": "frameworks",
+      "lifecycle": "planned",
+      "platform": "OpenAI Agents SDK",
+      "summary": "Give an agent a defined web extraction tool.",
+      "description": "A proposed tool adapter for applications built with the OpenAI Agents SDK. It would expose deliberate web-data operations that an application can authorize and observe.",
+      "workflow": [
+        "Define which Geonode operations the agent may call.",
+        "Let the agent request a page when a task needs current web context.",
+        "Return structured results and handle tool failures within the agent run."
+      ],
+      "outcome": "A documented tool adapter with clear input schemas, result envelopes and usage controls.",
+      "considerations": [
+        "The proposed adapter's API and supported framework versions are not finalized.",
+        "Model-provider access and Geonode API usage would be configured separately. Any retrieved web content should be treated as untrusted input."
+      ],
+      "current_path": {
+        "integration_id": "python",
+        "label": "Start with the Geonode Python SDK",
+        "url": "https://docs.geonode.com/docs/scraper-api/developer-guides/python-sdk"
+      },
+      "logo": "assets/openai-agents.svg"
+    },
+    {
+      "id": "vercel-ai-sdk",
+      "slug": "vercel-ai-sdk",
+      "name": "Vercel AI SDK",
+      "category": "frameworks",
+      "lifecycle": "planned",
+      "platform": "Vercel AI SDK",
+      "summary": "Add web data tools to an AI application.",
+      "description": "A proposed integration for teams building AI interfaces with the Vercel AI SDK. The aim is to keep Geonode credentials in server-side tool handlers while returning useful source content to the application.",
+      "workflow": [
+        "Register a server-side Geonode tool in the application's tool set.",
+        "Validate the requested URL and perform an extraction with the application's credentials.",
+        "Return the content and source URL to the model and user interface."
+      ],
+      "outcome": "A TypeScript tool example that fits a server-side AI workflow without exposing API keys to the browser.",
+      "considerations": [
+        "The proposed adapter's API and supported framework versions are not finalized.",
+        "Model-provider access and Geonode API usage would be configured separately. Any retrieved web content should be treated as untrusted input."
+      ],
+      "current_path": {
+        "integration_id": "typescript",
+        "label": "Geonode TypeScript SDK guide",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "official_resources": {
+        "owner": "Vercel",
+        "docs": "https://ai-sdk.dev/docs/ai-sdk-core/tools-and-tool-calling",
+        "source": "https://github.com/vercel/ai",
+        "package": "https://www.npmjs.com/package/ai",
+        "package_name": "ai",
+        "listing_url": "https://vercel.com/marketplace",
+        "listing_note": "No Geonode marketplace listing verified. The links below belong to Vercel’s AI SDK, not a Geonode connector.",
+        "checked_at": "2026-10-22",
+        "evidence": [
+          "https://ai-sdk.dev/docs/introduction",
+          "https://github.com/vercel/ai",
+          "https://registry.npmjs.org/ai/latest",
+          "https://ai-sdk.dev/resources/tools",
+          "https://vercel.com/marketplace"
+        ]
+      },
+      "logo": "assets/vercel-ai-sdk.svg"
+    },
+    {
+      "id": "mastra",
+      "slug": "mastra",
+      "name": "Mastra",
+      "category": "frameworks",
+      "lifecycle": "planned",
+      "platform": "Mastra",
+      "summary": "Use web extraction inside a typed agent workflow.",
+      "description": "A proposed Mastra integration for workflows that need web content as one controlled step. The adapter would make extraction results available to later steps without hiding API failures.",
+      "workflow": [
+        "Add a Geonode extraction step to a workflow.",
+        "Validate the returned content before the next step runs.",
+        "Pass the extracted material to research, enrichment or summarization tasks."
+      ],
+      "outcome": "A reusable tool and workflow example with visible inputs, outputs and failure handling.",
+      "considerations": [
+        "The proposed adapter's API and supported framework versions are not finalized.",
+        "Model-provider access and Geonode API usage would be configured separately. Any retrieved web content should be treated as untrusted input."
+      ],
+      "current_path": {
+        "integration_id": "typescript",
+        "label": "Geonode TypeScript SDK guide",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/mastra.svg"
+    },
+    {
+      "id": "dify",
+      "slug": "dify",
+      "name": "Dify",
+      "category": "automation",
+      "lifecycle": "planned",
+      "platform": "Dify",
+      "summary": "Add fresh web content to a visual AI workflow.",
+      "description": "A proposed Geonode connector for Dify workflows. It would provide an explicit extraction step before summarization or knowledge processing, rather than relying on a model to guess page contents.",
+      "workflow": [
+        "Accept a URL as workflow input.",
+        "Extract the page through a configured Geonode connection.",
+        "Send the returned text to the next processing or answer-generation step."
+      ],
+      "outcome": "A visual workflow that separates web retrieval from model reasoning.",
+      "considerations": [
+        "This proposal has no published Geonode connector or confirmed marketplace listing.",
+        "Connection permissions, delivery limits and retry behavior need validation before a release."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/dify.svg"
+    },
+    {
+      "id": "coze",
+      "slug": "coze",
+      "name": "Coze",
+      "category": "automation",
+      "lifecycle": "planned",
+      "platform": "Coze",
+      "summary": "Connect a bot workflow to selected web sources.",
+      "description": "A proposed Geonode integration for Coze bot and workflow builders. The intended path is a bounded web-data operation whose results can feed a downstream bot response.",
+      "workflow": [
+        "Collect the source URL required for the task.",
+        "Call a configured Geonode extraction operation.",
+        "Use the result in a bot workflow with the original source attached."
+      ],
+      "outcome": "A reusable extraction action with a clear result format for bot builders.",
+      "considerations": [
+        "This proposal has no published Geonode connector or confirmed marketplace listing.",
+        "Connection permissions, delivery limits and retry behavior need validation before a release."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/coze.svg"
+    },
+    {
+      "id": "pipedream",
+      "slug": "pipedream",
+      "name": "Pipedream",
+      "category": "automation",
+      "lifecycle": "planned",
+      "platform": "Pipedream",
+      "summary": "Use web data in event-driven automations.",
+      "description": "A proposed Pipedream integration for scheduled or event-triggered extraction. A reusable action would reduce repetitive HTTP configuration while leaving the rest of the workflow in your control.",
+      "workflow": [
+        "Start a workflow from a schedule or application event.",
+        "Send its URL to a Geonode action and inspect the result.",
+        "Deliver the extracted content to the destination already used by your workflow."
+      ],
+      "outcome": "A documented action and sample workflow for extracting one page and routing its output.",
+      "considerations": [
+        "This proposal has no published Geonode connector or confirmed marketplace listing.",
+        "Connection permissions, delivery limits and retry behavior need validation before a release."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/pipedream.svg"
+    },
+    {
+      "id": "google-sheets",
+      "slug": "google-sheets",
+      "name": "Google Sheets",
+      "category": "automation",
+      "lifecycle": "planned",
+      "platform": "Google Sheets",
+      "summary": "Turn a list of URLs into a reviewable sheet.",
+      "description": "A proposed Google Sheets workflow for teams managing research or enrichment in spreadsheets. Each URL would stay paired with its extraction result and processing status so unsuccessful rows can be reviewed.",
+      "workflow": [
+        "Select the rows containing source URLs.",
+        "Extract the requested content with a configured Geonode connection.",
+        "Write results, source links and status back to the corresponding rows."
+      ],
+      "outcome": "A repeatable way to enrich a spreadsheet without losing the relationship between an input row and its result.",
+      "considerations": [
+        "This proposal has no published Geonode connector or confirmed marketplace listing.",
+        "Connection permissions, delivery limits and retry behavior need validation before a release."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/google-sheets.svg"
+    },
+    {
+      "id": "airbyte",
+      "slug": "airbyte",
+      "name": "Airbyte",
+      "category": "automation",
+      "lifecycle": "planned",
+      "platform": "Airbyte",
+      "summary": "Bring extracted web data into a data pipeline.",
+      "description": "A proposed Airbyte connector for moving Geonode extraction output into an existing ingestion workflow. The design would need explicit source selection, repeat-run behavior and a stable record format.",
+      "workflow": [
+        "Choose the web sources and extraction output needed by the pipeline.",
+        "Read completed results as records with source and retrieval metadata.",
+        "Deliver those records through the configured Airbyte destination."
+      ],
+      "outcome": "A connector with documented schemas and sync behavior, suitable for evaluation in an ingestion pipeline.",
+      "considerations": [
+        "This proposal has no published Geonode connector or confirmed marketplace listing.",
+        "Connection permissions, delivery limits and retry behavior need validation before a release."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/airbyte.svg"
+    },
+    {
+      "id": "snowflake",
+      "slug": "snowflake",
+      "name": "Snowflake",
+      "category": "automation",
+      "lifecycle": "planned",
+      "platform": "Snowflake",
+      "summary": "Make web extraction results available for analysis.",
+      "description": "A proposed delivery workflow for teams using Snowflake to analyze data. The focus is preserving extracted content and source metadata in a queryable structure, with a clear boundary between extraction and warehouse loading.",
+      "workflow": [
+        "Extract the selected pages through Geonode.",
+        "Prepare records that include the source URL and retrieval time.",
+        "Load those records into the agreed Snowflake table structure."
+      ],
+      "outcome": "A documented delivery pattern with an explicit schema and observable load status.",
+      "considerations": [
+        "This proposal has no published Geonode connector or confirmed marketplace listing.",
+        "Connection permissions, delivery limits and retry behavior need validation before a release."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/snowflake.svg"
+    },
+    {
+      "id": "bigquery",
+      "slug": "bigquery",
+      "name": "BigQuery",
+      "category": "automation",
+      "lifecycle": "planned",
+      "platform": "BigQuery",
+      "summary": "Join web-derived records with your analytics data.",
+      "description": "A proposed BigQuery delivery workflow for teams that want to analyze Geonode results alongside existing datasets. The intended integration would make source attribution and schema handling part of the delivery process.",
+      "workflow": [
+        "Select the pages or URLs required for the analysis.",
+        "Convert extraction results into records with consistent metadata.",
+        "Deliver the records to a configured BigQuery dataset for review and querying."
+      ],
+      "outcome": "A reproducible extraction-to-table workflow with traceable source records.",
+      "considerations": [
+        "This proposal has no published Geonode connector or confirmed marketplace listing.",
+        "Connection permissions, delivery limits and retry behavior need validation before a release."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/bigquery.svg"
+    },
+    {
+      "id": "s3",
+      "slug": "s3",
+      "name": "Amazon S3",
+      "category": "automation",
+      "lifecycle": "planned",
+      "platform": "Amazon S3",
+      "summary": "Keep extraction output in your own object storage.",
+      "description": "A proposed delivery integration for storing Geonode results in an Amazon S3 bucket. The workflow would separate content extraction from storage access and make object naming and repeat deliveries predictable.",
+      "workflow": [
+        "Run extraction for the selected sources.",
+        "Choose the content format and object naming scheme.",
+        "Deliver the output to a configured bucket and record the delivery result."
+      ],
+      "outcome": "A documented storage delivery path with scoped permissions and clear success or failure reporting.",
+      "considerations": [
+        "This proposal has no published Geonode connector or confirmed marketplace listing.",
+        "Connection permissions, delivery limits and retry behavior need validation before a release."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/s3.svg"
+    },
+    {
+      "id": "postman",
+      "slug": "postman",
+      "name": "Postman",
+      "category": "api",
+      "lifecycle": "planned",
+      "platform": "Postman",
+      "summary": "Explore Geonode requests in a ready-to-use collection.",
+      "description": "A proposed maintained Postman collection for trying Geonode API requests and inspecting responses. The collection would keep authentication in an environment variable and pair examples with the current API reference.",
+      "workflow": [
+        "Create a local environment for your Geonode API key.",
+        "Choose an example request and enter a URL you want to extract.",
+        "Inspect the response and adapt the request for your application's needs."
+      ],
+      "outcome": "A versioned collection with representative requests, error examples and setup guidance.",
+      "considerations": [
+        "No official Geonode Postman collection is offered on this page yet.",
+        "API keys must stay out of shared collections and exported environment files."
+      ],
+      "current_path": {
+        "integration_id": "api",
+        "label": "Use the Geonode REST API today",
+        "url": "https://docs.geonode.com/docs/scraper-api/v1/reference"
+      },
+      "logo": "assets/postman.svg"
+    }
+  ]
+}
