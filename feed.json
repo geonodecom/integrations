@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_at": "2026-10-29T10:03:38Z",
+  "generated_at": "2026-10-29T11:10:04Z",
   "source": {
     "repository": "geonodecom/geonode-integrations-management",
-    "revision": "58a0804"
+    "revision": "b357b33"
   },
   "categories": [
     {
@@ -613,14 +613,16 @@
       "lifecycle": "published",
       "platform_verification": "not-applicable",
       "platform": "TypeScript",
-      "version": "0.6.1",
+      "version": "0.6.2",
       "runtime": "Node.js 18+",
-      "last_verified": "2026-10-21",
+      "last_verified": "2026-10-29",
       "verification": {
         "package": "verified",
         "connection": "not-tested",
-        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "note": "0.6.2 released on 2026-10-29 from geonodecom/sdk-typescript by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
         "evidence": [
+          "https://registry.npmjs.org/@geonode_scraper%2fscraper-sdk/0.6.2",
+          "https://registry.npmjs.org/-/npm/v1/attestations/@geonode_scraper%2fscraper-sdk@0.6.2",
           "https://registry.npmjs.org/@geonode_scraper%2fscraper-sdk"
         ]
       },
@@ -641,7 +643,7 @@
         "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
       },
       "installation": {
-        "command": "npm install @geonode_scraper/scraper-sdk@0.6.1",
+        "command": "npm install @geonode_scraper/scraper-sdk@0.6.2",
         "status": "package-verified",
         "note": "Uses the existing published package name. No package rename is required."
       },
