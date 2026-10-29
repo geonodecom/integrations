@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_at": "2026-10-28T12:25:50Z",
+  "generated_at": "2026-10-29T10:03:38Z",
   "source": {
     "repository": "geonodecom/geonode-integrations-management",
-    "revision": "db8c56d"
+    "revision": "58a0804"
   },
   "categories": [
     {
@@ -278,7 +278,7 @@
         "website": "https://geonode.com/integrations/mcp",
         "docs": "https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview",
         "source": "https://github.com/geonodecom/mcp",
-        "source_visibility": "private",
+        "source_visibility": "public",
         "package": null,
         "changelog": null,
         "support": "https://geonode.com/contact"
@@ -363,14 +363,16 @@
       "lifecycle": "published",
       "platform_verification": "not-applicable",
       "platform": "Terminal",
-      "version": "0.2.2",
+      "version": "0.2.3",
       "runtime": "Python 3.10+",
-      "last_verified": "2026-10-21",
+      "last_verified": "2026-10-29",
       "verification": {
         "package": "verified",
         "connection": "not-tested",
-        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "note": "0.2.3 released on 2026-10-29 from geonodecom/cli by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
         "evidence": [
+          "https://pypi.org/pypi/geonode-scraper-cli/0.2.3/json",
+          "https://pypi.org/integrity/geonode-scraper-cli/0.2.3/geonode_scraper_cli-0.2.3-py3-none-any.whl/provenance",
           "https://pypi.org/pypi/geonode-scraper-cli/json"
         ]
       },
@@ -390,7 +392,7 @@
         "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
       },
       "installation": {
-        "command": "pipx install geonode-scraper-cli==0.2.2",
+        "command": "pipx install geonode-scraper-cli==0.2.3",
         "status": "package-verified",
         "note": "Uses the existing published package name. No package rename is required."
       },
@@ -398,7 +400,7 @@
         "website": "https://geonode.com/integrations/cli",
         "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/cli",
         "source": "https://github.com/geonodecom/cli",
-        "source_visibility": "private",
+        "source_visibility": "public",
         "package": "https://pypi.org/project/geonode-scraper-cli/",
         "changelog": "https://pypi.org/project/geonode-scraper-cli/",
         "support": "https://geonode.com/contact"
@@ -488,14 +490,16 @@
       "lifecycle": "published",
       "platform_verification": "not-applicable",
       "platform": "Python",
-      "version": "0.6.1",
+      "version": "0.6.2",
       "runtime": "Python 3.10+",
-      "last_verified": "2026-10-21",
+      "last_verified": "2026-10-29",
       "verification": {
         "package": "verified",
         "connection": "not-tested",
-        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "note": "0.6.2 released on 2026-10-29 from geonodecom/sdk-python by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
         "evidence": [
+          "https://pypi.org/pypi/geonode-scraper-sdk/0.6.2/json",
+          "https://pypi.org/integrity/geonode-scraper-sdk/0.6.2/geonode_scraper_sdk-0.6.2-py3-none-any.whl/provenance",
           "https://pypi.org/pypi/geonode-scraper-sdk/json"
         ]
       },
@@ -516,7 +520,7 @@
         "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
       },
       "installation": {
-        "command": "pip install geonode-scraper-sdk==0.6.1",
+        "command": "pip install geonode-scraper-sdk==0.6.2",
         "status": "package-verified",
         "note": "Uses the existing published package name. No package rename is required."
       },
@@ -524,7 +528,7 @@
         "website": "https://geonode.com/integrations/sdk-python",
         "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/python",
         "source": "https://github.com/geonodecom/sdk-python",
-        "source_visibility": "private",
+        "source_visibility": "public",
         "package": "https://pypi.org/project/geonode-scraper-sdk/",
         "changelog": "https://pypi.org/project/geonode-scraper-sdk/",
         "support": "https://geonode.com/contact"
@@ -645,7 +649,7 @@
         "website": "https://geonode.com/integrations/sdk-typescript",
         "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/typescript",
         "source": "https://github.com/geonodecom/sdk-typescript",
-        "source_visibility": "private",
+        "source_visibility": "public",
         "package": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
         "changelog": "https://www.npmjs.com/package/@geonode_scraper/scraper-sdk",
         "support": "https://geonode.com/contact"
@@ -724,14 +728,16 @@
       "lifecycle": "published",
       "platform_verification": "not-applicable",
       "platform": "LangChain",
-      "version": "0.4.2",
+      "version": "0.4.3",
       "runtime": "Python 3.10+",
-      "last_verified": "2026-10-21",
+      "last_verified": "2026-10-29",
       "verification": {
         "package": "verified",
         "connection": "not-tested",
-        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "note": "0.4.3 released on 2026-10-29 from geonodecom/integration-langchain by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
         "evidence": [
+          "https://pypi.org/pypi/geonode-scraper-langchain/0.4.3/json",
+          "https://pypi.org/integrity/geonode-scraper-langchain/0.4.3/geonode_scraper_langchain-0.4.3-py3-none-any.whl/provenance",
           "https://pypi.org/pypi/geonode-scraper-langchain/json"
         ]
       },
@@ -753,7 +759,7 @@
         "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
       },
       "installation": {
-        "command": "pip install geonode-scraper-langchain==0.4.2",
+        "command": "pip install geonode-scraper-langchain==0.4.3",
         "status": "package-verified",
         "note": "Uses the existing published package name. No package rename is required."
       },
@@ -761,7 +767,7 @@
         "website": "https://geonode.com/integrations/integration-langchain",
         "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/langchain",
         "source": "https://github.com/geonodecom/integration-langchain",
-        "source_visibility": "private",
+        "source_visibility": "public",
         "package": "https://pypi.org/project/geonode-scraper-langchain/",
         "changelog": "https://pypi.org/project/geonode-scraper-langchain/",
         "support": "https://geonode.com/contact"
@@ -850,14 +856,16 @@
       "lifecycle": "published",
       "platform_verification": "not-applicable",
       "platform": "CrewAI",
-      "version": "0.4.2",
+      "version": "0.4.3",
       "runtime": "Python 3.10–3.13",
-      "last_verified": "2026-10-21",
+      "last_verified": "2026-10-29",
       "verification": {
         "package": "verified",
         "connection": "not-tested",
-        "note": "Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "note": "0.4.3 released on 2026-10-29 from geonodecom/integration-crewai by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. Package publication and local imports verified. Authenticated extraction has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
         "evidence": [
+          "https://pypi.org/pypi/geonode-scraper-crewai/0.4.3/json",
+          "https://pypi.org/integrity/geonode-scraper-crewai/0.4.3/geonode_scraper_crewai-0.4.3-py3-none-any.whl/provenance",
           "https://pypi.org/pypi/geonode-scraper-crewai/json"
         ]
       },
@@ -879,7 +887,7 @@
         "note": "Keep API keys on the server or in your client’s credential store. Usage is charged to your Geonode plan."
       },
       "installation": {
-        "command": "pip install geonode-scraper-crewai==0.4.2",
+        "command": "pip install geonode-scraper-crewai==0.4.3",
         "status": "package-verified",
         "note": "Uses the existing published package name. No package rename is required."
       },
@@ -887,7 +895,7 @@
         "website": "https://geonode.com/integrations/integration-crewai",
         "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/crewai",
         "source": "https://github.com/geonodecom/integration-crewai",
-        "source_visibility": "private",
+        "source_visibility": "public",
         "package": "https://pypi.org/project/geonode-scraper-crewai/",
         "changelog": "https://pypi.org/project/geonode-scraper-crewai/",
         "support": "https://geonode.com/contact"
@@ -976,14 +984,16 @@
       "lifecycle": "published",
       "platform_verification": "not-verified",
       "platform": "Self-hosted n8n",
-      "version": "0.2.3",
+      "version": "0.2.4",
       "runtime": "Self-hosted n8n · Node.js 20.15+",
-      "last_verified": "2026-10-21",
+      "last_verified": "2026-10-29",
       "verification": {
         "package": "verified",
         "connection": "not-tested",
-        "note": "Package verified on npm. Self-hosted community node; not n8n-verified or available on n8n Cloud. Workflow execution has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "note": "0.2.4 released on 2026-10-29 from geonodecom/integration-n8n by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. Package verified on npm. Self-hosted community node; not n8n-verified or available on n8n Cloud. Workflow execution has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
         "evidence": [
+          "https://registry.npmjs.org/n8n-nodes-scraperapi/0.2.4",
+          "https://registry.npmjs.org/-/npm/v1/attestations/n8n-nodes-scraperapi@0.2.4",
           "https://registry.npmjs.org/n8n-nodes-scraperapi"
         ]
       },
@@ -1013,7 +1023,7 @@
         "website": "https://geonode.com/integrations/integration-n8n",
         "docs": "https://docs.geonode.com/docs/scraper-api/guides/sdks/n8n",
         "source": "https://github.com/geonodecom/integration-n8n",
-        "source_visibility": "private",
+        "source_visibility": "public",
         "package": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
         "changelog": "https://www.npmjs.com/package/n8n-nodes-scraperapi",
         "support": "https://geonode.com/contact"
@@ -1137,7 +1147,7 @@
         "website": "https://geonode.com/integrations/integration-make",
         "docs": "https://docs.geonode.com/docs/scraper-api",
         "source": "https://github.com/geonodecom/integration-make",
-        "source_visibility": "private",
+        "source_visibility": "public",
         "package": null,
         "changelog": null,
         "support": "https://geonode.com/contact"
@@ -1275,7 +1285,7 @@
         "website": "https://geonode.com/integrations/integration-zapier",
         "docs": "https://docs.geonode.com/docs/scraper-api",
         "source": "https://github.com/geonodecom/integration-zapier",
-        "source_visibility": "private",
+        "source_visibility": "public",
         "package": null,
         "changelog": null,
         "support": "https://geonode.com/contact"
