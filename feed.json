@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_at": "2026-10-29T11:10:04Z",
+  "generated_at": "2026-10-29T13:23:48Z",
   "source": {
     "repository": "geonodecom/geonode-integrations-management",
-    "revision": "b357b33"
+    "revision": "0622b59"
   },
   "categories": [
     {
@@ -238,16 +238,17 @@
       "lifecycle": "published",
       "platform_verification": "not-applicable",
       "platform": "Streamable HTTP",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "runtime": "Compatible remote MCP client",
-      "last_verified": "2026-10-22",
+      "last_verified": "2026-10-29",
       "verification": {
         "package": "not-applicable",
         "connection": "not-tested",
-        "note": "Remote health, handshake, anonymous tool discovery and a direct anonymous extraction of https://example.com verified on 2026-10-21 through an installed Python helper. Native client tool exposure, automatic selection and authenticated execution remain untested. Capability copy checked against the official MCP overview on 2026-10-22; no new connection or extraction test was run.",
+        "note": "1.0.1 checked on 2026-10-29 at https://mcp.geonode.com/mcp and https://scraper.geonode.io/mcp (health, initialize and keyless tool discovery, 16 tools). The MCP Registry entry is com.geonode/mcp 1.0.1; io.geonode/scraper is deprecated with a pointer to it. Native client tool exposure, automatic selection and authenticated execution remain untested.",
         "evidence": [
           "https://docs.geonode.com/docs/scraper-api/guides/mcp/00_overview",
-          "https://registry.modelcontextprotocol.io/v0.1/servers/io.geonode%2Fscraper/versions/latest",
+          "https://registry.modelcontextprotocol.io/v0.1/servers/com.geonode%2Fmcp/versions/latest",
+          "https://mcp.geonode.com/mcp",
           "https://scraper.geonode.io/mcp"
         ]
       },
