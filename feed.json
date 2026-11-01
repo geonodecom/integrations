@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_at": "2026-11-01T13:28:03Z",
+  "generated_at": "2026-11-01T18:18:23Z",
   "source": {
     "repository": "geonodecom/geonode-integrations-management",
-    "revision": "f1cab9b"
+    "revision": "017b3cb"
   },
   "categories": [
     {
@@ -992,12 +992,13 @@
       "last_verified": "2026-11-01",
       "verification": {
         "package": "verified",
-        "connection": "not-tested",
-        "note": "0.3.0 released on 2026-11-01 from geonodecom/integration-n8n by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. n8n's community package scan (@n8n/scan-community-package 0.41.1) passes on the published version. The editor shows Geonode Scraper API; node and credential identifiers are unchanged. Needs n8n 1.85 or newer. Package verified on npm. Self-hosted community node; not n8n-verified or available on n8n Cloud. Workflow execution has not been tested in this review. Capability descriptions reviewed against repository source on 2026-10-21; no new authenticated execution test.",
+        "connection": "passed",
+        "note": "0.3.0 released on 2026-11-01 from geonodecom/integration-n8n by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. n8n's community package scan (@n8n/scan-community-package 0.41.1) passes on the published version. The editor shows Geonode Scraper API; node and credential identifiers are unchanged. Needs n8n 1.85 or newer. Package verified on npm. Self-hosted community node; not n8n-verified or available on n8n Cloud. On 2026-11-01 the published 0.3.0 ran in self-hosted n8n 2.45.7 and 1.85.0, where Extract (sync, and async with waiting) and Statistics succeeded against the live API. Capability descriptions reviewed against repository source on 2026-10-21.",
         "evidence": [
           "https://registry.npmjs.org/n8n-nodes-scraperapi/0.3.0",
           "https://registry.npmjs.org/-/npm/v1/attestations/n8n-nodes-scraperapi@0.3.0",
-          "https://registry.npmjs.org/n8n-nodes-scraperapi"
+          "https://registry.npmjs.org/n8n-nodes-scraperapi",
+          "https://github.com/geonodecom/integration-n8n/pull/7"
         ]
       },
       "capabilities": {
