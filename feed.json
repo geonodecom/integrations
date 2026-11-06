@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_at": "2026-11-01T18:18:23Z",
+  "generated_at": "2026-11-06T09:38:54Z",
   "source": {
     "repository": "geonodecom/geonode-integrations-management",
-    "revision": "017b3cb"
+    "revision": "06f4a0e"
   },
   "categories": [
     {
@@ -987,16 +987,16 @@
       "lifecycle": "published",
       "platform_verification": "not-verified",
       "platform": "Self-hosted n8n",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "runtime": "Self-hosted n8n 1.85+ · Node.js 20.15+",
-      "last_verified": "2026-11-01",
+      "last_verified": "2026-11-06",
       "verification": {
         "package": "verified",
         "connection": "passed",
-        "note": "0.3.0 released on 2026-11-01 from geonodecom/integration-n8n by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. n8n's community package scan (@n8n/scan-community-package 0.41.1) passes on the published version. The editor shows Geonode Scraper API; node and credential identifiers are unchanged. Needs n8n 1.85 or newer. Package verified on npm. Self-hosted community node; not n8n-verified or available on n8n Cloud. On 2026-11-01 the published 0.3.0 ran in self-hosted n8n 2.45.7 and 1.85.0, where Extract (sync, and async with waiting) and Statistics succeeded against the live API. Capability descriptions reviewed against repository source on 2026-10-21.",
+        "note": "0.3.1 released on 2026-11-06 from geonodecom/integration-n8n by its Publish workflow with trusted publishing; registry metadata, provenance and a clean install were checked signed out. n8n's community package scan (@n8n/scan-community-package 0.41.1) passes on the published version. The editor shows Geonode Scraper API; node and credential identifiers are unchanged. Needs n8n 1.85 or newer. Package verified on npm. Self-hosted community node; not n8n-verified or available on n8n Cloud. On 2026-11-01 the published 0.3.0 ran in self-hosted n8n 2.45.7 and 1.85.0, where Extract (sync, and async with waiting) and Statistics succeeded against the live API. Capability descriptions reviewed against repository source on 2026-10-21.",
         "evidence": [
-          "https://registry.npmjs.org/n8n-nodes-scraperapi/0.3.0",
-          "https://registry.npmjs.org/-/npm/v1/attestations/n8n-nodes-scraperapi@0.3.0",
+          "https://registry.npmjs.org/n8n-nodes-scraperapi/0.3.1",
+          "https://registry.npmjs.org/-/npm/v1/attestations/n8n-nodes-scraperapi@0.3.1",
           "https://registry.npmjs.org/n8n-nodes-scraperapi",
           "https://github.com/geonodecom/integration-n8n/pull/7"
         ]
