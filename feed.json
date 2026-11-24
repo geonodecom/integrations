@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_at": "2026-11-08T19:55:12Z",
+  "generated_at": "2026-11-24T12:51:04Z",
   "source": {
     "repository": "geonodecom/geonode-integrations-management",
-    "revision": "018e46c"
+    "revision": "e979d35"
   },
   "categories": [
     {
@@ -1255,13 +1255,13 @@
       "lifecycle": "private",
       "platform_verification": "not-verified",
       "platform": "Zapier",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "runtime": "Private app access",
       "last_verified": "2026-10-21",
       "verification": {
         "package": "not-applicable",
         "connection": "not-tested",
-        "note": "Private app access is required. Module/action definitions and output schemas reviewed in source on 2026-10-21; deployed account access and live workflow execution were not tested. No public marketplace listing is verified.",
+        "note": "Private app access is required. Module/action definitions and output schemas reviewed in source on 2026-10-21; deployed account access and live workflow execution were not tested. No public marketplace listing is verified. Version 1.1.0 read from package.json in geonodecom/integration-zapier at main 8d9fa9c on 2026-11-24; only the version was rechecked.",
         "evidence": []
       },
       "capabilities": {
